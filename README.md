@@ -9,7 +9,7 @@
 
 **A cutting-edge, military-themed tech education platform built with pure HTML & CSS**
 
-[Live Demo](#) • [Report Bug](https://neuralnerd01.github.io/strike-coderarmy/) • [Request Feature](https://github.com/neuralnerd01/strike-coderarmy/issues)
+[Live Demo](#) • [Report Bug](https://neuralnerd01-strike-coderarmy-blue.vercel.app/) • [Request Feature](https://github.com/neuralnerd01/strike-coderarmy/issues)
 
 </div>
 
