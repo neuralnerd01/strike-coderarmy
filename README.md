@@ -401,30 +401,4 @@ copies or substantial portions of the Software.
 
 **Made with ❤️ and pure CSS by [neuralnerd01](https://github.com/neuralnerd01)**
 
-## Pages Overview
-
-- **index.html**: Landing page with hero section and course overview
-- **missions.html**: Detailed course descriptions with objectives and prerequisites
-- **intel.html**: Command philosophy and team member profiles
-- **contact.html**: Contact form and information
-
-## Customization
-
-All styles are embedded within each HTML file's `<style>` tag. To customize:
-
-1. Edit the CSS custom properties in the `:root` selector
-2. Modify colors, fonts, and animations as needed
-3. All styles are self-contained - no external CSS files required
-
-## Browser Support
-
-Works in all modern browsers that support:
-
-- CSS Grid
-- CSS Custom Properties (variables)
-- CSS Animations
-- Flexbox
-
----
-
 **&copy; 2024 STRIKE TACTICAL TRAINING. ALL RIGHTS RESERVED.**
