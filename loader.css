@@ -1,0 +1,462 @@
+/*
+ * STRIKE - Loading Screen
+ * Splash Screen with Animated Logo
+ */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. LOADER CONTAINER
+ * 2. ANIMATED LOGO
+ * 3. TACTICAL SUBTITLE
+ * 4. COUNTDOWN TIMER
+ * 5. PROGRESS BAR
+ * 6. LOADING STATUS TEXT
+ * 7. TACTICAL GRID BACKGROUND
+ * 8. CORNER BRACKETS
+ * 9. FADE OUT ANIMATION
+ * 10. CONTENT REVEAL
+ * 11. RESPONSIVE DESIGN
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. LOADER CONTAINER
+ * ============================================ */
+
+/* #LOADER CONTAINER */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 0.8s ease-out 3.5s forwards;
+}
+
+.loader-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2) 0px,
+    rgba(0, 0, 0, 0.2) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.loader-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* #ANIMATED LOGO */
+.loader-logo {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  text-shadow: 0 0 20px var(--color-primary),
+               0 0 40px var(--color-primary),
+               0 0 60px var(--color-primary);
+  letter-spacing: 1rem;
+  margin-bottom: 2rem;
+  animation: logoGlow 2s ease-in-out infinite,
+             logoScale 0.8s ease-out;
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px var(--color-primary),
+                 0 0 40px var(--color-primary),
+                 0 0 60px var(--color-primary);
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 30px var(--color-primary),
+                 0 0 60px var(--color-primary),
+                 0 0 90px var(--color-primary);
+    opacity: 0.9;
+  }
+}
+
+@keyframes logoScale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* #TACTICAL SUBTITLE */
+.loader-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* #COUNTDOWN TIMER */
+.loader-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.6s forwards;
+}
+
+.countdown-label {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.countdown-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  text-shadow: 0 0 10px var(--color-primary);
+  min-width: 60px;
+  position: relative;
+  animation: countdownPulse 1s ease-in-out infinite;
+}
+
+/* Hide the original text content */
+.countdown-number {
+  color: transparent;
+  text-shadow: none;
+}
+
+/* Show 3, then 2, then 1 using ::after pseudo-element */
+.countdown-number::after {
+  content: '3';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-primary);
+  text-shadow: 0 0 10px var(--color-primary);
+  animation: countdownChange 3.5s steps(1, end) forwards;
+}
+
+@keyframes countdownChange {
+  0%, 32.9% {
+    content: '3';
+  }
+  33%, 65.9% {
+    content: '2';
+  }
+  66%, 99.9% {
+    content: '1';
+  }
+  100% {
+    content: '0';
+    opacity: 0;
+  }
+}
+
+@keyframes countdownPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* #PROGRESS BAR */
+.loader-progress {
+  width: 300px;
+  max-width: 80%;
+  height: 4px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.8s forwards;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    var(--color-secondary) 0%,
+    var(--color-primary) 50%,
+    var(--color-secondary) 100%);
+  background-size: 200% 100%;
+  width: 0%;
+  animation: progressFill 3s ease-out forwards,
+             progressGlow 1.5s ease-in-out infinite;
+  box-shadow: 0 0 20px var(--color-secondary);
+}
+
+@keyframes progressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes progressGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 20px var(--color-secondary);
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 30px var(--color-primary);
+  }
+}
+
+/* #LOADING STATUS TEXT */
+.loader-status {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 1s forwards,
+             statusBlink 2s ease-in-out 1.5s infinite;
+}
+
+@keyframes statusBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* #TACTICAL GRID BACKGROUND */
+.loader-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 0;
+  background-image: 
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* #CORNER BRACKETS */
+.loader-brackets {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 1.2s forwards;
+}
+
+.bracket {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--color-secondary);
+}
+
+.bracket-tl {
+  top: 5%;
+  left: 5%;
+  border-right: none;
+  border-bottom: none;
+  animation: bracketScan 2s ease-in-out infinite;
+}
+
+.bracket-tr {
+  top: 5%;
+  right: 5%;
+  border-left: none;
+  border-bottom: none;
+  animation: bracketScan 2s ease-in-out 0.5s infinite;
+}
+
+.bracket-bl {
+  bottom: 5%;
+  left: 5%;
+  border-right: none;
+  border-top: none;
+  animation: bracketScan 2s ease-in-out 1s infinite;
+}
+
+.bracket-br {
+  bottom: 5%;
+  right: 5%;
+  border-left: none;
+  border-top: none;
+  animation: bracketScan 2s ease-in-out 1.5s infinite;
+}
+
+@keyframes bracketScan {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* #FADE OUT ANIMATION */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* #CONTENT REVEAL */
+.page-content {
+  opacity: 0;
+  animation: contentFadeIn 0.8s ease-out 3.8s forwards;
+  position: relative;
+  isolation: isolate;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* #RESPONSIVE */
+@media (max-width: 768px) {
+  .loader-logo {
+    font-size: clamp(2rem, 12vw, 4rem);
+    letter-spacing: 0.5rem;
+  }
+
+  .loader-subtitle {
+    font-size: clamp(0.7rem, 3vw, 1rem);
+    letter-spacing: 0.3rem;
+  }
+
+  .countdown-number {
+    font-size: 2rem;
+    min-width: 50px;
+  }
+
+  .loader-progress {
+    width: 250px;
+  }
+
+  .bracket {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bracket-tl,
+  .bracket-tr {
+    top: 10%;
+  }
+
+  .bracket-bl,
+  .bracket-br {
+    bottom: 10%;
+  }
+
+  .bracket-tl,
+  .bracket-bl {
+    left: 5%;
+  }
+
+  .bracket-tr,
+  .bracket-br {
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-logo {
+    letter-spacing: 0.3rem;
+  }
+
+  .loader-subtitle {
+    letter-spacing: 0.2rem;
+  }
+
+  .loader-progress {
+    width: 200px;
+  }
+
+  .bracket {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,298 @@
+/*
+ * STRIKE - Pricing Page
+ * Dedicated Pricing Stylesheet
+ */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. PRICING HERO
+ * 2. PRICING GRID
+ * 3. PRICING CARDS
+ * 4. FEATURED PRICING CARD
+ * 5. PRICING FEATURES LIST
+ * 6. RESPONSIVE DESIGN
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. PRICING HERO
+ * ============================================ */
+
+.pricing-hero {
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.pricing-subtitle {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+}
+
+.pricing-section {
+  padding: 4rem 0;
+  background: var(--color-bg);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pricing-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 255, 194, 0.2);
+}
+
+.pricing-card:hover::before {
+  transform: scaleX(1);
+}
+
+.pricing-card-featured {
+  border: 2px solid var(--color-primary);
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+}
+
+.pricing-card-featured:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: -2rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  padding: 0.5rem 3rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-header h3 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pricing-rank {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pricing-cost {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.currency {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.amount {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--color-text);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.period {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  align-self: flex-end;
+  margin-bottom: 0.8rem;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.pricing-features li {
+  padding: 0.75rem 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-fast);
+}
+
+.pricing-features li:hover {
+  padding-left: 0.5rem;
+  color: var(--color-secondary);
+}
+
+.pricing-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pricing-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-secondary);
+  transition: left 0.3s ease-out;
+  z-index: -1;
+}
+
+.pricing-btn:hover {
+  color: var(--color-bg);
+  border-color: var(--color-secondary);
+}
+
+.pricing-btn:hover::before {
+  left: 0;
+}
+
+.pricing-card-featured .pricing-btn {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.pricing-card-featured .pricing-btn::before {
+  background: var(--color-secondary);
+}
+
+.pricing-card-featured .pricing-btn:hover {
+  border-color: var(--color-secondary);
+}
+
+/* ============================================
+ * 6. RESPONSIVE DESIGN
+ * ============================================ */
+
+/* #RESPONSIVE */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pricing-card-featured {
+    transform: scale(1);
+  }
+
+  .pricing-card-featured:hover {
+    transform: translateY(-10px);
+  }
+
+  .amount {
+    font-size: 3rem;
+  }
+
+  .currency {
+    font-size: 1.5rem;
+  }
+
+  .plan-name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .amount {
+    font-size: 2.5rem;
+  }
+
+  .feature-item {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+

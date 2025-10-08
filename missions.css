@@ -1,0 +1,567 @@
+/*
+ * STRIKE - Missions Page Styles
+ * Mission briefings and leaderboard system
+ */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. HERO SECTION
+ *    - Hero Background
+ *    - Hero Overlay
+ *    - Hero Paragraph
+ * 
+ * 2. MISSION BRIEFING CARDS
+ *    - Card Container
+ *    - Card Header
+ *    - Card Meta
+ *    - Card Body
+ * 
+ * 3. TOP OPERATORS LEADERBOARD
+ *    - Container & Background
+ *    - Leaderboard Items
+ *    - Rank Styling (Top 3)
+ *    - Avatar System
+ *    - XP Display
+ *    - Badge System
+ * 
+ * 4. ANIMATIONS
+ *    - Entry Animations
+ *    - Hover Effects
+ *    - Badge Animations
+ * 
+ * 5. RESPONSIVE DESIGN
+ *    - Tablet Breakpoint
+ *    - Mobile Breakpoint
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. HERO SECTION
+ * ============================================ */
+
+/* Hero Section - Missions Page */
+.missions-page .hero {
+  background-image: url("images/image7.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-color: #1a1a1a;
+}
+
+/* Darken overlay for better text visibility - Missions page */
+.missions-page .hero::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 10, 10, 0.6) 0%,
+    rgba(10, 10, 10, 0.85) 100%
+  ) !important;
+}
+
+/* Enhanced hero paragraph visibility for missions page */
+.missions-page .hero p {
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(0, 255, 194, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.9),
+    0 4px 12px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(0, 255, 194, 0.9) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(0, 255, 194, 0.5));
+  max-width: 700px;
+  margin: 1.5rem auto;
+}
+
+/* ============================================
+ * 2. MISSION BRIEFING CARDS
+ * ============================================ */
+
+/* Mission Briefing Cards */
+.mission-briefing {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  margin-bottom: 3rem;
+  padding: 2rem;
+  transition: box-shadow var(--transition-slow), border-color var(--transition-slow);
+}
+
+.mission-briefing:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 25px rgba(0, 255, 194, 0.2);
+}
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mission-header h3 {
+  font-size: 1.8rem;
+  color: var(--color-text);
+}
+
+.mission-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.mission-meta span {
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.mission-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.mission-body h4 {
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.mission-body ul {
+  list-style-type: none;
+}
+
+.mission-body ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mission-body ul li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* Page Load Animations */
+.mission-briefing {
+  animation: missionBriefingEntry 1s var(--transition-slow) forwards;
+  opacity: 0;
+}
+
+.mission-briefing:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.mission-briefing:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+
+.mission-briefing:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mission-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================
+ * 3. TOP OPERATORS LEADERBOARD
+ * ============================================ */
+
+/* TOP OPERATORS LEADERBOARD */
+
+.leaderboard-container {
+  background: linear-gradient(135deg, rgba(20, 30, 35, 0.95), rgba(30, 40, 45, 0.9));
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background effect */
+.leaderboard-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 194, 0.03) 2px,
+    rgba(0, 255, 194, 0.03) 4px
+  );
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.leaderboard-item {
+  display: grid;
+  grid-template-columns: 60px 70px 1fr auto 60px;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(90deg, rgba(0, 255, 194, 0.05), rgba(0, 255, 194, 0.02));
+  border: 1px solid rgba(0, 255, 194, 0.2);
+  border-left: 4px solid var(--color-secondary);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: leaderboardEntrySlide 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* Staggered entry animations */
+.leaderboard-item:nth-child(1) { animation-delay: 0.1s; }
+.leaderboard-item:nth-child(2) { animation-delay: 0.2s; }
+.leaderboard-item:nth-child(3) { animation-delay: 0.3s; }
+.leaderboard-item:nth-child(4) { animation-delay: 0.4s; }
+.leaderboard-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes leaderboardEntrySlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Glowing effect on hover */
+.leaderboard-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 194, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.leaderboard-item:hover::before {
+  left: 100%;
+}
+
+.leaderboard-item:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 30px rgba(0, 255, 194, 0.3),
+              inset 0 0 20px rgba(0, 255, 194, 0.1);
+  transform: translateX(5px);
+}
+
+/* Special styling for top 3 ranks */
+.rank-1 {
+  border-left-color: #ffd700;
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.02));
+}
+
+.rank-1:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4),
+              inset 0 0 20px rgba(255, 215, 0, 0.15);
+}
+
+.rank-2 {
+  border-left-color: #c0c0c0;
+  background: linear-gradient(90deg, rgba(192, 192, 192, 0.1), rgba(192, 192, 192, 0.02));
+}
+
+.rank-2:hover {
+  border-color: #c0c0c0;
+  box-shadow: 0 0 30px rgba(192, 192, 192, 0.4),
+              inset 0 0 20px rgba(192, 192, 192, 0.15);
+}
+
+.rank-3 {
+  border-left-color: #cd7f32;
+  background: linear-gradient(90deg, rgba(205, 127, 50, 0.1), rgba(205, 127, 50, 0.02));
+}
+
+.rank-3:hover {
+  border-color: #cd7f32;
+  box-shadow: 0 0 30px rgba(205, 127, 50, 0.4),
+              inset 0 0 20px rgba(205, 127, 50, 0.15);
+}
+
+/* Rank Number */
+.rank-number {
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.rank-1 .rank-number {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.rank-2 .rank-number {
+  color: #c0c0c0;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.rank-3 .rank-number {
+  color: #cd7f32;
+  text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+/* Operator Avatar */
+.operator-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(0, 255, 194, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 194, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.rank-1 .operator-avatar {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.rank-2 .operator-avatar {
+  background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+  border-color: rgba(192, 192, 192, 0.5);
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+}
+
+.rank-3 .operator-avatar {
+  background: linear-gradient(135deg, #cd7f32, #e89b5a);
+  border-color: rgba(205, 127, 50, 0.5);
+  box-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+}
+
+.leaderboard-item:hover .operator-avatar {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 25px rgba(0, 255, 194, 0.6);
+}
+
+.avatar-initials {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-background);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Operator Name */
+.operator-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+}
+
+.rank-1 .operator-name {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.rank-2 .operator-name {
+  color: #e0e0e0;
+}
+
+.rank-3 .operator-name {
+  color: #e89b5a;
+}
+
+/* Operator XP */
+.operator-xp {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Roboto Mono', monospace;
+  color: var(--color-secondary);
+  text-align: right;
+  text-shadow: 0 0 10px rgba(0, 255, 194, 0.5);
+}
+
+.rank-1 .operator-xp {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.rank-2 .operator-xp {
+  color: #c0c0c0;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.rank-3 .operator-xp {
+  color: #cd7f32;
+  text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+/* Rank Badge */
+.rank-badge {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.gold-badge {
+  animation: goldSpin 3s linear infinite;
+}
+
+@keyframes goldSpin {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.15);
+  }
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.15);
+  }
+}
+
+.silver-badge {
+  filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.5));
+}
+
+.bronze-badge {
+  filter: drop-shadow(0 0 10px rgba(205, 127, 50, 0.5));
+}
+
+.star-badge {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+}
+
+/* ============================================
+ * 5. RESPONSIVE DESIGN
+ * ============================================ */
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .leaderboard-item {
+    grid-template-columns: 50px 60px 1fr auto;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .rank-badge {
+    display: none;
+  }
+
+  .operator-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .avatar-initials {
+    font-size: 1.2rem;
+  }
+
+  .operator-name {
+    font-size: 1.1rem;
+  }
+
+  .operator-xp {
+    font-size: 1.2rem;
+  }
+
+  .rank-number {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .leaderboard-container {
+    padding: 1rem;
+  }
+
+  .leaderboard-item {
+    grid-template-columns: 40px 50px 1fr;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .operator-xp {
+    grid-column: 3;
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .operator-name {
+    grid-column: 3;
+    font-size: 1rem;
+  }
+
+  .operator-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .avatar-initials {
+    font-size: 1rem;
+  }
+
+  .rank-number {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,467 @@
+/* MODAL POPUP SYSTEM - PURE CSS */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. MODAL TOGGLE & OVERLAY
+ * 2. MODAL CONTAINER
+ * 3. MODAL HEADER
+ * 4. MODAL BODY & CONTENT
+ * 5. MODAL FORM ELEMENTS
+ * 6. MODAL BUTTONS & ACTIONS
+ * 7. ANIMATIONS & EFFECTS
+ * 8. RESPONSIVE DESIGN
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. MODAL TOGGLE & OVERLAY
+ * ============================================ */
+
+/* Modal Toggle - Hidden Checkbox */
+.modal-toggle {
+  display: none;
+}
+
+/* Modal Overlay - Backdrop */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              visibility 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Show Modal when checkbox is checked */
+.modal-toggle:checked + .modal-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-toggle:checked + .modal-overlay .modal-container {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Modal Container */
+.modal-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border: 2px solid #00ffc2;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0, 255, 194, 0.3),
+              0 0 100px rgba(0, 255, 194, 0.1),
+              inset 0 0 60px rgba(0, 255, 194, 0.05);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.7) translateY(-50px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              opacity 0.4s ease;
+  animation: modalGlow 2s ease-in-out infinite alternate;
+}
+
+/* Small Modal Variant */
+.modal-small {
+  max-width: 450px;
+}
+
+/* Modal Glow Animation */
+@keyframes modalGlow {
+  0% {
+    box-shadow: 0 0 50px rgba(0, 255, 194, 0.3),
+                0 0 100px rgba(0, 255, 194, 0.1),
+                inset 0 0 60px rgba(0, 255, 194, 0.05);
+  }
+  100% {
+    box-shadow: 0 0 60px rgba(0, 255, 194, 0.4),
+                0 0 120px rgba(0, 255, 194, 0.15),
+                inset 0 0 80px rgba(0, 255, 194, 0.08);
+  }
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #ff0040;
+  border-radius: 50%;
+  color: #ff0040;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: rgba(255, 0, 0, 0.2);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 64, 0.5);
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 40px 40px 20px;
+  border-bottom: 2px solid rgba(0, 255, 194, 0.2);
+  text-align: center;
+}
+
+.modal-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5),
+               0 0 40px rgba(255, 215, 0, 0.3);
+  animation: titlePulse 2s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3); }
+  50% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 0 60px rgba(255, 215, 0, 0.4); }
+}
+
+.modal-subtitle {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.95rem;
+  color: #00ffc2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 30px 40px 40px;
+}
+
+.modal-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Modal Form */
+.modal-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.85rem;
+  color: #00ffc2;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 255, 194, 0.3);
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #00ffc2;
+  background: rgba(0, 255, 194, 0.05);
+  box-shadow: 0 0 20px rgba(0, 255, 194, 0.2),
+              inset 0 0 10px rgba(0, 255, 194, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300ffc2' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  padding-right: 45px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-select option {
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Checkbox Styling */
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.form-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #00ffc2;
+  cursor: pointer;
+}
+
+.form-checkbox-label:hover {
+  color: #00ffc2;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-btn-primary,
+.modal-btn-secondary {
+  padding: 14px 32px;
+  font-family: 'Orbitron', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  display: inline-block;
+}
+
+.modal-btn-primary {
+  background: linear-gradient(135deg, #00ffc2 0%, #00d4a0 100%);
+  color: #0a0a0a;
+  box-shadow: 0 4px 15px rgba(0, 255, 194, 0.3);
+}
+
+.modal-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 255, 194, 0.5);
+  background: linear-gradient(135deg, #00d4a0 0%, #00ffc2 100%);
+}
+
+.modal-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #00ffc2;
+  border: 2px solid #00ffc2;
+  box-shadow: none;
+}
+
+.modal-btn-secondary:hover {
+  background: rgba(0, 255, 194, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 255, 194, 0.2);
+}
+
+/* Scrollbar for Modal */
+.modal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+  background: #00ffc2;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .modal-overlay {
+    padding: 15px;
+  }
+
+  .modal-container {
+    max-height: 95vh;
+  }
+
+  .modal-header {
+    padding: 30px 25px 15px;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .modal-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .modal-body {
+    padding: 20px 25px 30px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-btn-primary,
+  .modal-btn-secondary {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    line-height: 31px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-title {
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+  }
+
+  .modal-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .form-label {
+    font-size: 0.75rem;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* Loading State Animation (Optional) */
+@keyframes formLoading {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.form-loading .modal-btn-primary {
+  pointer-events: none;
+  animation: formLoading 1.5s ease-in-out infinite;
+}
+
+.form-loading .modal-btn-primary::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* Card Enroll Button (for course cards) */
+.card-enroll-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #00ffc2 0%, #00d4a0 100%);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 255, 194, 0.3);
+}
+
+.card-enroll-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 255, 194, 0.5);
+  background: linear-gradient(135deg, #00d4a0 0%, #00ffc2 100%);
+}

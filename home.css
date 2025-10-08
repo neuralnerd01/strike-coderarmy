@@ -1,0 +1,1072 @@
+/*
+ * STRIKE - Home Page Styles
+ * Homepage-specific styling and animations
+ */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. HERO SECTION
+ *    - Background Slider
+ *    - Hero Container
+ *    - Hero Title (STRIKE)
+ *    - Hero Subtitle
+ *    - Hero Badge (CODER ARMY)
+ *    - Hero Description
+ * 
+ * 2. HERO ANIMATIONS
+ *    - Title Animations
+ *    - Subtitle Animations
+ *    - Badge Animations
+ *    - Glitch Effects
+ * 
+ * 3. COURSES SECTION
+ *    - Course Grid
+ *    - Course Cards
+ *    - Hover Effects
+ * 
+ * 4. OTHER SECTIONS
+ *    - About Section
+ *    - Contact Section
+ * 
+ * 5. RESPONSIVE DESIGN
+ *    - Mobile Styles
+ *    - Tablet Styles
+ *    - Small Device Styles
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. HERO SECTION
+ * ============================================ */
+
+/* Rotating Background Images Animation */
+.hero-bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: bgSlide 10s infinite;
+}
+
+/* Set background images for each slide */
+.hero-bg-slide:nth-child(1) {
+  background-image: url('images/image1.jpg');
+  animation-delay: 0s;
+}
+
+.hero-bg-slide:nth-child(2) {
+  background-image: url('images/image7.png');
+  animation-delay: 2s;
+}
+
+.hero-bg-slide:nth-child(3) {
+  background-image: url('images/image14.png');
+  animation-delay: 4s;
+}
+
+.hero-bg-slide:nth-child(4) {
+  background-image: url('images/image17.png');
+  animation-delay: 6s;
+}
+
+.hero-bg-slide:nth-child(5) {
+  background-image: url('images/image16.png');
+  animation-delay: 8s;
+}
+
+.hero-bg-slide:nth-child(6) {
+  background-image: url('images/image20.jpg');
+  animation-delay: 10s;
+}
+
+.hero-bg-slide:nth-child(7) {
+  background-image: url('images/image4.jpg');
+  animation-delay: 10s;
+}
+
+/* Smooth fade in/out animation */
+@keyframes bgSlide {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hero Section - Home Page */
+.home-page .hero {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+/* Reduce overlay darkness for home page */
+.home-page .hero::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  ) !important;
+  z-index: 1;
+}
+
+/* --- Matrix Code Particles --- */
+.matrix-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.3;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* --- Tactical Grid Overlay --- */
+.tactical-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 194, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 194, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 3;
+  opacity: 0.6;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Hero Title Wrapper */
+.hero-title-wrapper {
+  margin-bottom: 2rem;
+}
+
+/* Animated Hero Title - Retro 80s Style */
+.hero-title-animated {
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 900;
+  color: #ffd700; /* Gold/Yellow base */
+  opacity: 0;
+  transform: translateY(-50px) scale(0.9);
+  animation: 
+    titleReveal 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+    tacticalPulse 3s ease-in-out 1.5s infinite,
+    glitchShift 8s ease-in-out 2s infinite;
+  margin-bottom: 1rem;
+  position: relative;
+  letter-spacing: 0.05em;
+  
+  /* Enhanced layered text effect with stronger shadows and outline */
+  text-shadow: 
+    /* Strong black outline for contrast */
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000,
+    -4px 0 0 #000,
+    4px 0 0 #000,
+    0 -4px 0 #000,
+    0 4px 0 #000,
+    /* Intense glow */
+    0 0 30px rgba(255, 215, 0, 1),
+    0 0 60px rgba(255, 215, 0, 0.9),
+    0 0 90px rgba(255, 215, 0, 0.7),
+    /* 3D depth with cyan */
+    0 3px 0 #00d4aa,
+    0 6px 0 #00d4aa,
+    0 9px 0 #00d4aa,
+    0 12px 0 #00c9a0,
+    0 15px 0 #00be96,
+    0 18px 0 #00b38c,
+    0 21px 0 #00a882,
+    /* Deep shadows for visibility */
+    0 24px 10px rgba(0, 0, 0, 0.8),
+    0 30px 20px rgba(0, 0, 0, 0.6),
+    0 40px 40px rgba(0, 0, 0, 0.4);
+  
+  /* Add semi-transparent background for extra visibility */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Chromatic Aberration Effect - Red Channel */
+.hero-title-animated::before {
+  content: 'STRIKE';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ff0040;
+  opacity: 0;
+  z-index: -1;
+  mix-blend-mode: screen;
+  animation: chromaticRed 4s ease-in-out infinite;
+  text-shadow: none;
+  background: none;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Chromatic Aberration Effect - Cyan Channel */
+.hero-title-animated::after {
+  content: 'STRIKE';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00ffff;
+  opacity: 0;
+  z-index: -1;
+  mix-blend-mode: screen;
+  animation: chromaticCyan 4s ease-in-out infinite;
+  text-shadow: none;
+  background: none;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Chromatic Aberration Animations */
+@keyframes chromaticRed {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(-4px, 0);
+    opacity: 0.8;
+  }
+  20% {
+    transform: translate(-2px, 1px);
+    opacity: 0.6;
+  }
+  30% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes chromaticCyan {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(4px, 0);
+    opacity: 0.8;
+  }
+  20% {
+    transform: translate(2px, -1px);
+    opacity: 0.6;
+  }
+  30% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Glitch Trigger on Hover */
+.hero-title-animated:hover::before {
+  animation: chromaticRedGlitch 0.3s ease-in-out infinite;
+}
+
+.hero-title-animated:hover::after {
+  animation: chromaticCyanGlitch 0.3s ease-in-out infinite;
+}
+
+@keyframes chromaticRedGlitch {
+  0%, 100% {
+    transform: translate(-6px, 0);
+    opacity: 0.9;
+  }
+  33% {
+    transform: translate(-4px, 2px);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(-8px, -1px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes chromaticCyanGlitch {
+  0%, 100% {
+    transform: translate(6px, 0);
+    opacity: 0.9;
+  }
+  33% {
+    transform: translate(4px, -2px);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(8px, 1px);
+    opacity: 0.8;
+  }
+}
+
+/* Hero Badge Wrapper */
+.hero-badge-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: subtitleReveal 1s ease-out 0.8s forwards;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #00ffc2;
+  font-family: var(--font-mono);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  /* Enhanced visibility with outline and glow */
+  text-shadow: 
+    /* Black outline */
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    /* Intense cyan glow */
+    0 0 15px rgba(0, 255, 194, 1),
+    0 0 30px rgba(0, 255, 194, 0.8),
+    0 0 45px rgba(0, 255, 194, 0.6),
+    0 0 60px rgba(0, 255, 194, 0.4),
+    /* Drop shadow */
+    0 4px 10px rgba(0, 0, 0, 0.8);
+  animation: subtitleGlow 3s ease-in-out infinite;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+}
+
+/* Pulsing Badge - CODER ARMY - Enhanced visibility */
+.pulsing-badge {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.3) 0%,
+    rgba(255, 215, 0, 0.4) 50%,
+    rgba(0, 212, 170, 0.3) 100%
+  );
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 4px solid transparent;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #ffd700;
+  /* Enhanced text visibility */
+  text-shadow: 
+    /* Black outline */
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    -3px 0 0 #000,
+    3px 0 0 #000,
+    0 -3px 0 #000,
+    0 3px 0 #000,
+    /* Intense glow */
+    0 0 25px rgba(255, 215, 0, 1),
+    0 0 50px rgba(255, 215, 0, 0.8),
+    0 0 75px rgba(255, 215, 0, 0.6),
+    /* 3D effect */
+    0 3px 0 #00d4aa,
+    0 6px 0 #00d4aa,
+    0 9px 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 
+    /* Outer glow */
+    0 0 40px rgba(255, 215, 0, 0.8),
+    0 0 80px rgba(255, 215, 0, 0.5),
+    /* Depth */
+    0 10px 30px rgba(0, 0, 0, 0.7),
+    /* Inner glow */
+    inset 0 0 50px rgba(255, 215, 0, 0.25),
+    /* Border enhancement */
+    inset 0 0 0 2px rgba(255, 215, 0, 0.4);
+  animation: 
+    badgePulse 2s ease-in-out infinite,
+    borderRotate 3s linear infinite;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-clip: padding-box;
+  text-decoration: none;
+}
+
+/* Animated border gradient - Gold/Cyan matching STRIKE */
+.pulsing-badge::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(
+    45deg,
+    #ffd700,
+    #00d4aa,
+    #00c9a0,
+    #ffd700,
+    #00d4aa
+  );
+  border-radius: 50px;
+  z-index: -1;
+  animation: borderSpin 4s linear infinite;
+  background-size: 400% 400%;
+}
+
+/* Shine sweep effect */
+.pulsing-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: badgeShine 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Hover effect */
+.pulsing-badge:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 
+    0 0 50px rgba(255, 215, 0, 0.8),
+    0 0 100px rgba(255, 215, 0, 0.5),
+    0 0 150px rgba(255, 215, 0, 0.3),
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 60px rgba(255, 215, 0, 0.25);
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: #ffffff;
+  max-width: 700px;
+  margin: 2rem auto 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  font-weight: 600;
+  line-height: 1.8;
+  /* Enhanced visibility with stronger shadows */
+  text-shadow: 
+    /* Black outline for readability */
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    /* Glow effect */
+    0 0 20px rgba(0, 255, 194, 0.6),
+    0 0 40px rgba(0, 255, 194, 0.4),
+    /* Strong drop shadow */
+    0 3px 8px rgba(0, 0, 0, 0.9),
+    0 6px 16px rgba(0, 0, 0, 0.7);
+  animation: 
+    descriptionReveal 1s ease-out 1.2s forwards,
+    descriptionGlow 4s ease-in-out 2s infinite;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 255, 194, 0.95) 50%,
+    rgba(255, 215, 0, 0.95) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(0, 255, 194, 0.6));
+  /* Add dark background for better contrast */
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.hero-description::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  z-index: -1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* ============================================
+ * 2. HERO ANIMATIONS
+ * ============================================ */
+
+/* Title Reveal Animation */
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Subtitle Reveal Animation */
+@keyframes subtitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Description Reveal Animation */
+@keyframes descriptionReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtitle Glow Animation */
+@keyframes subtitleGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(0, 255, 194, 0.8),
+      0 0 20px rgba(0, 255, 194, 0.5),
+      0 0 30px rgba(0, 255, 194, 0.3);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px rgba(0, 255, 194, 1),
+      0 0 30px rgba(0, 255, 194, 0.7),
+      0 0 45px rgba(0, 255, 194, 0.5),
+      0 0 60px rgba(0, 255, 194, 0.3);
+  }
+}
+
+/* Description Glow Animation */
+@keyframes descriptionGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(0, 255, 194, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(0, 255, 194, 0.6)) 
+            drop-shadow(0 0 50px rgba(255, 215, 0, 0.3));
+  }
+}
+
+/* Badge Pulse Animation */
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.6),
+      0 0 60px rgba(255, 215, 0, 0.3),
+      0 8px 20px rgba(0, 0, 0, 0.5),
+      inset 0 0 40px rgba(255, 215, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 
+      0 0 50px rgba(255, 215, 0, 0.8),
+      0 0 80px rgba(255, 215, 0, 0.5),
+      0 0 120px rgba(255, 215, 0, 0.3),
+      0 10px 25px rgba(0, 0, 0, 0.6),
+      inset 0 0 60px rgba(255, 215, 0, 0.25);
+  }
+}
+
+/* Badge Border Spin Animation */
+@keyframes borderSpin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Badge Shine Effect */
+@keyframes badgeShine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 200%;
+  }
+}
+
+/* --- STRIKE Title Animations --- */
+
+/* Tactical Pulse - Subtle breathing effect with glow */
+@keyframes tacticalPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.6),
+      0 2px 0 #00d4aa,
+      0 4px 0 #00d4aa,
+      0 6px 0 #00d4aa,
+      0 8px 0 #00d4aa,
+      0 10px 0 #00c9a0,
+      0 12px 0 #00be96,
+      0 14px 0 #00b38c,
+      0 16px 0 #00a882,
+      0 18px 6px rgba(0, 0, 0, 0.4),
+      0 20px 10px rgba(0, 0, 0, 0.3),
+      0 25px 20px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(255, 215, 0, 1),
+      0 0 60px rgba(255, 215, 0, 0.8),
+      0 0 80px rgba(0, 255, 194, 0.6),
+      0 2px 0 #00d4aa,
+      0 4px 0 #00d4aa,
+      0 6px 0 #00d4aa,
+      0 8px 0 #00d4aa,
+      0 10px 0 #00c9a0,
+      0 12px 0 #00be96,
+      0 14px 0 #00b38c,
+      0 16px 0 #00a882,
+      0 18px 8px rgba(0, 0, 0, 0.5),
+      0 20px 15px rgba(0, 0, 0, 0.4),
+      0 25px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Glitch Shift - Subtle position shift with RGB split */
+@keyframes glitchShift {
+  0%, 90%, 100% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+  91% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(90deg);
+  }
+  92% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(-90deg);
+  }
+  93% {
+    transform: translate(-1px, 1px);
+  }
+  94% {
+    transform: translate(1px, -1px);
+  }
+  95% {
+    transform: translate(0, 0);
+    filter: none;
+  }
+}
+
+/* Glitch Flicker - Random glitch overlay appearance */
+@keyframes glitchFlicker {
+  0%, 20%, 22%, 40%, 42%, 60%, 62%, 80%, 82%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  21% {
+    opacity: 0.7;
+    transform: translate(-3px, 1px) skew(-1deg);
+  }
+  41% {
+    opacity: 0.6;
+    transform: translate(2px, -1px) skew(1deg);
+  }
+  61% {
+    opacity: 0.8;
+    transform: translate(-2px, 0) skew(0.5deg);
+  }
+  81% {
+    opacity: 0.5;
+    transform: translate(1px, 1px) skew(-0.5deg);
+  }
+}
+
+/* Legacy h1 fallback (if class not applied) */
+.home-page .hero h1:not(.hero-title-animated) {
+  font-size: clamp(3rem, 10vw, 7rem);
+  animation: textGlitch 5s linear infinite;
+}
+
+.home-page .hero p:not(.hero-description) {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin: 0 auto 2rem;
+}
+
+/* Page Load Animations */
+main > #courses,
+main > #about,
+main > #contact {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+main > #courses {
+  animation-delay: 0.2s;
+}
+
+main > #about {
+  animation-delay: 0.4s;
+}
+
+main > #contact {
+  animation-delay: 0.6s;
+}
+
+/* ============================================
+ * 3. COURSES SECTION
+ * ============================================ */
+
+/* #COURSES SECTION */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  perspective: 1000px;
+}
+
+.course-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  position: relative;
+  padding: 2rem;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  transform-style: preserve-3d;
+  overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card::before,
+.course-card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--color-secondary);
+  border-style: solid;
+  transition: all var(--transition-fast);
+}
+
+.course-card::before {
+  top: 10px;
+  left: 10px;
+  border-width: 2px 0 0 2px;
+}
+
+.course-card::after {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 2px 2px 0;
+}
+
+.course-card:hover {
+  transform: translateZ(20px) rotateY(-3deg) rotateX(3deg);
+  border-color: var(--color-secondary);
+  animation: cardPulseGlow 1.5s infinite ease-in-out;
+}
+
+.course-card:hover::before,
+.course-card:hover::after {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+
+.card-content {
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.course-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.course-card:hover h3 {
+  color: var(--color-primary);
+}
+
+.card-hover-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background: rgba(18, 18, 18, 0.9);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.course-card:hover .card-content {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.course-card:hover .card-hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-hover-content h4 {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.card-hover-content ul {
+  list-style: none;
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+.card-hover-content li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.card-rank {
+  align-self: flex-end;
+  margin-top: auto;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+ * 4. OTHER SECTIONS
+ * ============================================ */
+
+/* About Section Styles */
+#about p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--color-text-muted);
+}
+
+#about p:last-child {
+  margin-top: 2rem;
+}
+
+/* Contact Section Styles */
+#contact p {
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+#contact .btn {
+  margin-top: 2rem;
+}
+
+/* ============================================
+ * 5. RESPONSIVE DESIGN
+ * ============================================ */
+
+/* #RESPONSIVE DESIGN - HOME PAGE */
+
+/* Tablet Adjustments for Tactical Effects */
+@media (max-width: 1024px) {
+  /* Grid adjustments handled in base styles */
+}
+
+/* Mobile Adjustments for Tactical Effects */
+@media (max-width: 768px) {
+  /* Reduce grid pattern size */
+  .tactical-grid-overlay {
+    background-size: 30px 30px;
+  }
+
+  @keyframes gridMove {
+    0%, 100% { background-position: 0 0; }
+    50% { background-position: 30px 30px; }
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .course-card {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+
+  .course-card:hover {
+    transform: translateZ(10px) rotateY(0) rotateX(0);
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .home-page .hero {
+    min-height: 80vh;
+  }
+
+  /* Responsive Hero Animations */
+  .hero-title-animated {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  .hero-badge-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .pulsing-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce grid size further */
+  .tactical-grid-overlay {
+    background-size: 20px 20px;
+    opacity: 0.4;
+  }
+
+  @keyframes gridMove {
+    0%, 100% { background-position: 0 0; }
+    50% { background-position: 20px 20px; }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  /* Tablet Hero Adjustments */
+  .hero-title-animated {
+    font-size: clamp(2.8rem, 9vw, 6rem);
+  }
+
+  .pulsing-badge {
+    padding: 0.55rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .hero-title-animated {
+    font-size: 2.2rem;
+  }
+
+  .hero-badge-wrapper {
+    margin-top: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .pulsing-badge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+}

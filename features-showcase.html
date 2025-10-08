@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Features Showcase - STRIKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="loader.css" />
+    <link rel="stylesheet" href="features.css" />
+    <link rel="stylesheet" href="advanced-features.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+      <div class="loader-grid"></div>
+      <div class="loader-brackets">
+        <div class="bracket bracket-tl"></div>
+        <div class="bracket bracket-tr"></div>
+        <div class="bracket bracket-bl"></div>
+        <div class="bracket bracket-br"></div>
+      </div>
+      <div class="loader-content">
+        <h1 class="loader-logo">STRIKE</h1>
+        <p class="loader-subtitle">Elite Tactical Training</p>
+        <div class="loader-countdown">
+          <span class="countdown-label">Initializing</span>
+          <span class="countdown-number">3</span>
+        </div>
+        <div class="loader-progress">
+          <div class="progress-bar"></div>
+        </div>
+        <p class="loader-status">Systems Online</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-content">
+      <header class="header">
+        <a href="index.html" class="logo">STRIKE</a>
+        <input type="checkbox" id="nav-toggle" title="Toggle navigation menu" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+        </label>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search Courses..."
+          />
+          <div class="search-dropdown">
+            <a href="index.html#courses" class="search-item"
+              >Data Structures & Algorithms</a
+            >
+            <a href="index.html#courses" class="search-item"
+              >System Design: LLD</a
+            >
+            <a href="index.html#courses" class="search-item"
+              >System Design: HLD</a
+            >
+            <a href="index.html#courses" class="search-item"
+              >DevOps & Cloud Infrastructure</a
+            >
+            <a href="index.html#courses" class="search-item"
+              >SQL & Database Mastery</a
+            >
+            <a href="index.html#courses" class="search-item"
+              >OS & Computer Networks</a
+            >
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="missions.html">Missions</a></li>
+          <li><a href="features-showcase.html">Features</a></li>
+          <li><a href="intel.html">Intel</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signup.html" class="nav-btn-signup">Sign Up</a></li>
+        </ul>
+      </header>
+
+      <main>
+        <!-- Hero Section -->
+        <section class="hero features-hero">
+          <div class="hero-tactical-grid"></div>
+          <div class="hero-scanline"></div>
+          <div class="hero-content container">
+            <div class="hero-badge-top">TACTICAL INTERFACE</div>
+            <h1 class="hero-title features-title">ADVANCED FEATURES</h1>
+            <p class="hero-subtitle features-subtitle">
+              <span class="glitch-text"
+                >Experience cutting-edge tactical training interfaces</span
+              >
+            </p>
+            <div class="hero-stats-mini">
+              <div class="stat-mini">
+                <span class="stat-mini-number">40+</span>
+                <span class="stat-mini-label">Features</span>
+              </div>
+              <div class="stat-mini">
+                <span class="stat-mini-number">100%</span>
+                <span class="stat-mini-label">Placement Support</span>
+              </div>
+              <div class="stat-mini">
+                <span class="stat-mini-number">∞</span>
+                <span class="stat-mini-label">Possibilities</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Floating Navigation Menu -->
+        <input type="checkbox" id="nav-menu-toggle" class="nav-menu-checkbox" />
+        <label for="nav-menu-toggle" class="nav-menu-trigger">
+          <span class="nav-menu-icon">☰</span>
+          <span class="nav-menu-text">Quick Nav</span>
+        </label>
+        <nav class="floating-nav-menu">
+          <div class="floating-nav-header">
+            <h3>Feature Navigation</h3>
+            <label for="nav-menu-toggle" class="nav-menu-close">✕</label>
+          </div>
+          <ul class="floating-nav-list">
+            <li>
+              <a href="#categories" class="nav-menu-link">
+                <span class="nav-number">01</span>
+                <span class="nav-text">Feature Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="#quick-access" class="nav-menu-link">
+                <span class="nav-number">02</span>
+                <span class="nav-text">Quick Access Hub</span>
+              </a>
+            </li>
+            <li>
+              <a href="#tabs" class="nav-menu-link">
+                <span class="nav-number">03</span>
+                <span class="nav-text">Course Categories</span>
+              </a>
+            </li>
+            <li>
+              <a href="#cards" class="nav-menu-link">
+                <span class="nav-number">04</span>
+                <span class="nav-text">Course Details</span>
+              </a>
+            </li>
+            <li>
+              <a href="#videos" class="nav-menu-link">
+                <span class="nav-number">05</span>
+                <span class="nav-text">Training Footage</span>
+              </a>
+            </li>
+            <li>
+              <a href="#tech-stack" class="nav-menu-link">
+                <span class="nav-number">06</span>
+                <span class="nav-text">Technology Stack</span>
+              </a>
+            </li>
+            <li>
+              <a href="#timeline" class="nav-menu-link">
+                <span class="nav-number">07</span>
+                <span class="nav-text">12-Week Syllabus</span>
+              </a>
+            </li>
+            <li>
+              <a href="#reviews" class="nav-menu-link">
+                <span class="nav-number">08</span>
+                <span class="nav-text">Operative Testimonials</span>
+              </a>
+            </li>
+            <li>
+              <a href="#comparison" class="nav-menu-link">
+                <span class="nav-number">09</span>
+                <span class="nav-text">Transformation</span>
+              </a>
+            </li>
+            <li>
+              <a href="#split-screen" class="nav-menu-link">
+                <span class="nav-number">10</span>
+                <span class="nav-text">Choose Your Path</span>
+              </a>
+            </li>
+          </ul>
+          <div class="floating-nav-footer">
+            <span class="nav-feature-count">40+ Features</span>
+          </div>
+        </nav>
+
+        <!-- Feature Categories Section -->
+        <section id="categories" class="feature-categories-section">
+          <div class="section-title container">
+            <h2>Feature Categories</h2>
+            <p>Explore our comprehensive collection</p>
+          </div>
+          <div class="categories-carousel">
+            <div class="categories-track">
+              <!-- First set of cards -->
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="category-title">UI/UX Features</h3>
+                <p class="category-desc">Visual effects and animations</p>
+                <span class="category-count">12 Features</span>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polygon
+                      points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+                    ></polygon>
+                  </svg>
+                </div>
+                <h3 class="category-title">Interactive Elements</h3>
+                <p class="category-desc">User interaction components</p>
+                <span class="category-count">15 Features</span>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <h3 class="category-title">Data Visualization</h3>
+                <p class="category-desc">Charts and progress displays</p>
+                <span class="category-count">8 Features</span>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect
+                      x="5"
+                      y="2"
+                      width="14"
+                      height="20"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                </div>
+                <h3 class="category-title">Responsive Design</h3>
+                <p class="category-desc">Mobile-first components</p>
+                <span class="category-count">5 Features</span>
+              </div>
+              <!-- Duplicate set for seamless loop -->
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="category-title">UI/UX Features</h3>
+                <p class="category-desc">Visual effects and animations</p>
+                <span class="category-count">12 Features</span>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polygon
+                      points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+                    ></polygon>
+                  </svg>
+                </div>
+                <h3 class="category-title">Interactive Elements</h3>
+                <p class="category-desc">User interaction components</p>
+                <span class="category-count">15 Features</span>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <h3 class="category-title">Data Visualization</h3>
+                <p class="category-desc">Charts and progress displays</p>
+                <span class="category-count">8 Features</span>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect
+                      x="5"
+                      y="2"
+                      width="14"
+                      height="20"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                </div>
+                <h3 class="category-title">Responsive Design</h3>
+                <p class="category-desc">Mobile-first components</p>
+                <span class="category-count">5 Features</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #5 - Video Thumbnails -->
+        <section id="videos" class="container feature-section">
+          <div class="section-title">
+            <h2>Training Footage</h2>
+            <p>Mission recordings</p>
+          </div>
+          <div class="video-grid">
+            <a
+              href="https://youtu.be/1pcikNlDB-4?si=fwybOMPKJKi4IolF"
+              target="_blank"
+              rel="noopener"
+              class="video-card"
+            >
+              <div class="video-thumbnail video-webdev"></div>
+              <div class="video-play-btn"></div>
+              <div class="video-overlay">
+                <h3 class="video-title">Web Development</h3>
+                <span class="video-duration">Full Course</span>
+              </div>
+            </a>
+            <a
+              href="https://youtu.be/GkZN_-HMCJ8?si=ueKSstXgzYEC39cN"
+              target="_blank"
+              rel="noopener"
+              class="video-card"
+            >
+              <div class="video-thumbnail video-html"></div>
+              <div class="video-play-btn"></div>
+              <div class="video-overlay">
+                <h3 class="video-title">HTML</h3>
+                <span class="video-duration">Complete Guide</span>
+              </div>
+            </a>
+            <a
+              href="https://youtu.be/7rrUVevoECg?si=_SBXOynMYgjmvsLn"
+              target="_blank"
+              rel="noopener"
+              class="video-card"
+            >
+              <div class="video-thumbnail video-css"></div>
+              <div class="video-play-btn"></div>
+              <div class="video-overlay">
+                <h3 class="video-title">CSS</h3>
+                <span class="video-duration">Master Course</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Infinite Scroll Marquee -->
+          <div class="marquee-container">
+            <div class="marquee-track">
+              <div class="marquee-content">
+                <span class="marquee-item">DATA STRUCTURES & ALGORITHMS</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">SYSTEM DESIGN: LLD</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">SYSTEM DESIGN: HLD</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">GENERATIVE AI</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">BLOCKCHAIN DEVELOPMENT</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">WEB DEVELOPMENT (MERN)</span>
+                <span class="marquee-separator">▸</span>
+              </div>
+              <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item">DATA STRUCTURES & ALGORITHMS</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">SYSTEM DESIGN: LLD</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">SYSTEM DESIGN: HLD</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">GENERATIVE AI</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">BLOCKCHAIN DEVELOPMENT</span>
+                <span class="marquee-separator">▸</span>
+                <span class="marquee-item">WEB DEVELOPMENT (MERN)</span>
+                <span class="marquee-separator">▸</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #6 - Tabbed Categories -->
+        <section
+          id="tabs"
+          class="course-tabs-section container feature-section"
+        >
+          <div class="section-title">
+            <h2>Course Categories</h2>
+            <p>Select your specialization</p>
+          </div>
+
+          <input
+            type="radio"
+            id="tab-frontend"
+            name="course-tab"
+            class="tab-radio"
+            checked
+          />
+          <input
+            type="radio"
+            id="tab-backend"
+            name="course-tab"
+            class="tab-radio"
+          />
+          <input
+            type="radio"
+            id="tab-devops"
+            name="course-tab"
+            class="tab-radio"
+          />
+          <input
+            type="radio"
+            id="tab-security"
+            name="course-tab"
+            class="tab-radio"
+          />
+          <input
+            type="radio"
+            id="tab-mobile"
+            name="course-tab"
+            class="tab-radio"
+          />
+
+          <div class="tab-controls">
+            <label for="tab-frontend" class="tab-label">Frontend</label>
+            <label for="tab-backend" class="tab-label">Backend</label>
+            <label for="tab-devops" class="tab-label">DevOps</label>
+            <label for="tab-security" class="tab-label">Security</label>
+            <label for="tab-mobile" class="tab-label">Mobile</label>
+          </div>
+
+          <div class="tab-panels">
+            <div id="panel-frontend" class="tab-content">
+              <h3>Frontend Development</h3>
+              <p>
+                Master modern frontend technologies including React, Vue, and
+                Angular. Build responsive, performant user interfaces with
+                cutting-edge frameworks.
+              </p>
+            </div>
+            <div id="panel-backend" class="tab-content">
+              <h3>Backend Engineering</h3>
+              <p>
+                Develop robust server-side applications with Node.js, Python,
+                and Java. Learn database design, API architecture, and
+                microservices.
+              </p>
+            </div>
+            <div id="panel-devops" class="tab-content">
+              <h3>DevOps Operations</h3>
+              <p>
+                Master containerization, CI/CD pipelines, and cloud
+                infrastructure. Deploy and scale applications with Docker,
+                Kubernetes, and AWS.
+              </p>
+            </div>
+            <div id="panel-security" class="tab-content">
+              <h3>Security Protocols</h3>
+              <p>
+                Implement enterprise-grade security measures. Learn penetration
+                testing, encryption, and secure coding practices.
+              </p>
+            </div>
+            <div id="panel-mobile" class="tab-content">
+              <h3>Mobile Development</h3>
+              <p>
+                Build native and cross-platform mobile applications. Master
+                React Native, Flutter, and mobile-specific design patterns.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- #8 - Expandable Course Cards -->
+        <section id="cards" class="container feature-section">
+          <div class="section-title">
+            <h2>Course Details</h2>
+            <p>Expand for full briefing</p>
+          </div>
+
+          <div class="expandable-card">
+            <input type="checkbox" id="expand-1" class="expand-toggle" />
+            <label for="expand-1" class="expand-header">
+              <h3 class="expand-title">Advanced React Patterns</h3>
+              <span class="expand-icon">▼</span>
+            </label>
+            <div class="expand-content">
+              <p>
+                Deep dive into advanced React concepts including hooks, context,
+                and performance optimization techniques.
+              </p>
+              <ul>
+                <li>Custom Hooks Development</li>
+                <li>Context API Mastery</li>
+                <li>Performance Optimization</li>
+                <li>Code Splitting Strategies</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="expandable-card">
+            <input type="checkbox" id="expand-2" class="expand-toggle" />
+            <label for="expand-2" class="expand-header">
+              <h3 class="expand-title">Node.js Architecture</h3>
+              <span class="expand-icon">▼</span>
+            </label>
+            <div class="expand-content">
+              <p>
+                Build scalable backend systems with Node.js. Learn event-driven
+                architecture and microservices patterns.
+              </p>
+              <ul>
+                <li>Express Framework</li>
+                <li>RESTful API Design</li>
+                <li>Database Integration</li>
+                <li>Authentication Systems</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="expandable-card">
+            <input type="checkbox" id="expand-3" class="expand-toggle" />
+            <label for="expand-3" class="expand-header">
+              <h3 class="expand-title">Cloud Deployment</h3>
+              <span class="expand-icon">▼</span>
+            </label>
+            <div class="expand-content">
+              <p>
+                Master cloud platforms and deployment strategies. From
+                containers to serverless architectures.
+              </p>
+              <ul>
+                <li>AWS Services Overview</li>
+                <li>Docker Containerization</li>
+                <li>Kubernetes Orchestration</li>
+                <li>CI/CD Pipelines</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- #14 - Isometric Cards -->
+        <section id="tech-stack" class="container feature-section">
+          <div class="section-title">
+            <h2>Technology Stack</h2>
+            <p>3D tactical overview</p>
+          </div>
+          <div class="isometric-grid">
+            <div class="isometric-card">
+              <h3 class="isometric-header">Frontend Arsenal</h3>
+              <p class="isometric-content">
+                React • Vue • Angular • TypeScript • Tailwind CSS • Next.js
+              </p>
+            </div>
+            <div class="isometric-card">
+              <h3 class="isometric-header">Backend Operations</h3>
+              <p class="isometric-content">
+                Node.js • Express • NestJS • GraphQL • MongoDB • PostgreSQL
+              </p>
+            </div>
+            <div class="isometric-card">
+              <h3 class="isometric-header">DevOps Tools</h3>
+              <p class="isometric-content">
+                Docker • Kubernetes • AWS • CI/CD • Jenkins • Terraform
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- #26 - Before/After Comparison -->
+        <section id="comparison" class="container feature-section">
+          <div class="section-title">
+            <h2>Transformation</h2>
+            <p>Before and after training</p>
+          </div>
+          <input
+            type="checkbox"
+            id="comparison-toggle"
+            class="comparison-slider-toggle"
+          />
+          <div class="comparison-slider">
+            <div class="comparison-image comparison-before">BEFORE</div>
+            <div class="comparison-image comparison-after">AFTER</div>
+            <label for="comparison-toggle" class="comparison-handle"></label>
+            <div class="comparison-labels">
+              <span class="comparison-label">Beginner</span>
+              <span class="comparison-label">Expert</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Student Reviews Section -->
+        <section id="reviews" class="container feature-section">
+          <div class="section-title">
+            <h2>Operative Testimonials</h2>
+            <p>Success stories from the field</p>
+          </div>
+
+          <div class="reviews-grid">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">
+                    <span class="avatar-initial">A</span>
+                  </div>
+                  <div class="reviewer-details">
+                    <h3 class="reviewer-name">Arjun Sharma</h3>
+                    <span class="reviewer-batch">Batch: DSA Mastery</span>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                "The DSA course transformed my coding abilities. The tactical
+                approach to problem-solving helped me crack multiple FAANG
+                interviews. Mission accomplished!"
+              </p>
+              <div class="review-meta">
+                <span class="review-date">2 weeks ago</span>
+                <span class="review-verified">✓ Verified Graduate</span>
+              </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">
+                    <span class="avatar-initial">P</span>
+                  </div>
+                  <div class="reviewer-details">
+                    <h3 class="reviewer-name">Priya Patel</h3>
+                    <span class="reviewer-batch">Batch: System Design HLD</span>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                "System Design HLD gave me the confidence to architect scalable
+                solutions. Now leading a team of 15 engineers at a unicorn
+                startup!"
+              </p>
+              <div class="review-meta">
+                <span class="review-date">1 month ago</span>
+                <span class="review-verified">✓ Verified Graduate</span>
+              </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">
+                    <span class="avatar-initial">R</span>
+                  </div>
+                  <div class="reviewer-details">
+                    <h3 class="reviewer-name">Rahul Verma</h3>
+                    <span class="reviewer-batch">Batch: Generative AI</span>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                "Generative AI course is cutting-edge! Built my own LLM-powered
+                application that's now being used by 10K+ users. Best investment
+                ever."
+              </p>
+              <div class="review-meta">
+                <span class="review-date">3 weeks ago</span>
+                <span class="review-verified">✓ Verified Graduate</span>
+              </div>
+            </div>
+
+            <!-- Review Card 4 -->
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">
+                    <span class="avatar-initial">S</span>
+                  </div>
+                  <div class="reviewer-details">
+                    <h3 class="reviewer-name">Sneha Reddy</h3>
+                    <span class="reviewer-batch">Batch: MERN Stack</span>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                "From zero to full-stack developer in 16 weeks. The hands-on
+                projects and tactical guidance made all the difference. Highly
+                recommended!"
+              </p>
+              <div class="review-meta">
+                <span class="review-date">5 days ago</span>
+                <span class="review-verified">✓ Verified Graduate</span>
+              </div>
+            </div>
+
+            <!-- Review Card 5 -->
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">
+                    <span class="avatar-initial">V</span>
+                  </div>
+                  <div class="reviewer-details">
+                    <h3 class="reviewer-name">Vikram Singh</h3>
+                    <span class="reviewer-batch">Batch: Blockchain Dev</span>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                "Blockchain Development course opened doors I didn't know
+                existed. Now working on Web3 projects with global teams. Elite
+                training indeed!"
+              </p>
+              <div class="review-meta">
+                <span class="review-date">2 months ago</span>
+                <span class="review-verified">✓ Verified Graduate</span>
+              </div>
+            </div>
+
+            <!-- Review Card 6 -->
+            <div class="review-card">
+              <div class="review-header">
+                <div class="reviewer-info">
+                  <div class="reviewer-avatar">
+                    <span class="avatar-initial">K</span>
+                  </div>
+                  <div class="reviewer-details">
+                    <h3 class="reviewer-name">Kavya Iyer</h3>
+                    <span class="reviewer-batch">Batch: System Design LLD</span>
+                  </div>
+                </div>
+                <div class="review-rating">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                "Low-level design concepts were crystal clear. The SOLID
+                principles training helped me refactor legacy code at my
+                company. Promotion achieved!"
+              </p>
+              <div class="review-meta">
+                <span class="review-date">1 week ago</span>
+                <span class="review-verified">✓ Verified Graduate</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section id="quick-access" class="container feature-section">
+          <div class="section-title">
+            <h2>Quick Access Hub</h2>
+            <p>Navigate tactical resources instantly</p>
+          </div>
+
+          <div class="quick-access-grid">
+            <!-- Quick Access Card 1: Courses -->
+            <a href="#categories" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Courses</h3>
+              <p class="quick-access-desc">Browse all training programs</p>
+            </a>
+
+            <!-- Quick Access Card 2: Videos -->
+            <a href="#videos" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Training Videos</h3>
+              <p class="quick-access-desc">Access video library</p>
+            </a>
+
+            <!-- Quick Access Card 3: Timeline -->
+            <a href="#timeline" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Syllabus</h3>
+              <p class="quick-access-desc">View course timeline</p>
+            </a>
+
+            <!-- Quick Access Card 4: Reviews -->
+            <a href="#reviews" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  ></polygon>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Reviews</h3>
+              <p class="quick-access-desc">Student testimonials</p>
+            </a>
+
+            <!-- Quick Access Card 5: Tech Stack -->
+            <a href="#tech-stack" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Tech Stack</h3>
+              <p class="quick-access-desc">Explore technologies</p>
+            </a>
+
+            <!-- Quick Access Card 6: Comparison -->
+            <a href="#comparison" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Progress</h3>
+              <p class="quick-access-desc">Track your transformation</p>
+            </a>
+
+            <!-- Quick Access Card 7: Tabs -->
+            <a href="#tabs" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                  ></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Categories</h3>
+              <p class="quick-access-desc">Browse by specialization</p>
+            </a>
+
+            <!-- Quick Access Card 8: Tooltips -->
+            <a href="#tooltips" class="quick-access-card">
+              <div class="quick-access-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <h3 class="quick-access-title">Info Hub</h3>
+              <p class="quick-access-desc">Learn technical terms</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- #30 - Course Syllabus Timeline -->
+        <section
+          id="timeline"
+          class="syllabus-timeline container feature-section"
+        >
+          <div class="section-title">
+            <h2>12-Week Syllabus</h2>
+            <p>Week-by-week breakdown</p>
+          </div>
+
+          <div class="syllabus-week">
+            <div class="week-header">
+              <div class="week-number">1</div>
+              <h3 class="week-title">HTML & CSS Fundamentals</h3>
+            </div>
+            <div class="week-lessons">
+              <div class="lesson-item">
+                <h4 class="lesson-title">HTML Structure & Semantics</h4>
+                <span class="lesson-duration">2.5 hours</span>
+              </div>
+              <div class="lesson-item">
+                <h4 class="lesson-title">CSS Styling & Layouts</h4>
+                <span class="lesson-duration">3 hours</span>
+              </div>
+              <div class="lesson-item">
+                <h4 class="lesson-title">Responsive Design</h4>
+                <span class="lesson-duration">2 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="syllabus-week">
+            <div class="week-header">
+              <div class="week-number">2</div>
+              <h3 class="week-title">JavaScript Basics</h3>
+            </div>
+            <div class="week-lessons">
+              <div class="lesson-item">
+                <h4 class="lesson-title">Variables & Data Types</h4>
+                <span class="lesson-duration">2 hours</span>
+              </div>
+              <div class="lesson-item">
+                <h4 class="lesson-title">Functions & Control Flow</h4>
+                <span class="lesson-duration">3 hours</span>
+              </div>
+              <div class="lesson-item">
+                <h4 class="lesson-title">DOM Manipulation</h4>
+                <span class="lesson-duration">2.5 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="syllabus-week">
+            <div class="week-header">
+              <div class="week-number">3</div>
+              <h3 class="week-title">React Introduction</h3>
+            </div>
+            <div class="week-lessons">
+              <div class="lesson-item">
+                <h4 class="lesson-title">Components & Props</h4>
+                <span class="lesson-duration">3 hours</span>
+              </div>
+              <div class="lesson-item">
+                <h4 class="lesson-title">State Management</h4>
+                <span class="lesson-duration">2.5 hours</span>
+              </div>
+              <div class="lesson-item">
+                <h4 class="lesson-title">Hooks Fundamentals</h4>
+                <span class="lesson-duration">3 hours</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #31 - Split Screen -->
+        <section id="split-screen" class="container feature-section">
+          <div class="section-title">
+            <h2>Choose Your Path</h2>
+            <p>Select your specialization</p>
+          </div>
+          <div class="split-screen">
+            <div class="split-panel">
+              <div class="split-bg split-frontend"></div>
+              <div class="split-content">
+                <h2 class="split-title">FRONTEND</h2>
+                <p class="split-desc">
+                  Master user interfaces and visual experiences
+                </p>
+                <a href="missions.html" class="btn">Begin Mission</a>
+              </div>
+            </div>
+            <div class="split-panel">
+              <div class="split-bg split-backend"></div>
+              <div class="split-content">
+                <h2 class="split-title">BACKEND</h2>
+                <p class="split-desc">Build powerful server architectures</p>
+                <a href="missions.html" class="btn">Begin Mission</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <h2 class="footer-logo">STRIKE</h2>
+              <p class="footer-tagline">Elite Tactical Training</p>
+              <div class="footer-badge">
+                <span class="badge-label">Presented by</span>
+                <span class="badge-name">CODER ARMY</span>
+              </div>
+            </div>
+            <div class="footer-links">
+              <div class="footer-column">
+                <h3 class="footer-heading">Navigation</h3>
+                <ul class="footer-nav">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="missions.html">Missions</a></li>
+                  <li><a href="intel.html">Intel</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-nav">
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="features-showcase.html">Features</a></li>
+                  <li><a href="signup.html">Sign Up</a></li>
+                  <li><a href="signin.html">Sign In</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="footer-social">
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="Twitter"
+                    aria-label="Twitter"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                      /></svg
+                  ></a>
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="GitHub"
+                    aria-label="GitHub"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      /></svg
+                  ></a>
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="LinkedIn"
+                    aria-label="LinkedIn"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                      /></svg
+                  ></a>
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="Discord"
+                    aria-label="Discord"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                      /></svg
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+              <p>
+                &copy; 2024 <span class="highlight">STRIKE</span> TACTICAL
+                TRAINING. ALL RIGHTS RESERVED.
+              </p>
+              <p class="footer-mission">MISSION SUCCESS IS NOT OPTIONAL.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Back to Top -->
+      <a href="#" class="back-to-top" title="Back to top"></a>
+    </div>
+  </body>
+</html>

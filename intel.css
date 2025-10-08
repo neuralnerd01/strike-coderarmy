@@ -1,0 +1,268 @@
+/*
+ * STRIKE - Intel Page Styles
+ * Meet the training cadre and philosophy
+ */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. HERO SECTION
+ *    - Hero Background
+ *    - Hero Overlay
+ *    - Hero Paragraph
+ * 
+ * 2. PHILOSOPHY SECTION
+ *    - Philosophy Content
+ * 
+ * 3. CADRE SECTION
+ *    - Cadre Grid
+ *    - Cadre Cards
+ *    - Cadre Images
+ *    - Cadre Stats
+ * 
+ * 4. ANIMATIONS
+ *    - Scanline Effect
+ *    - Page Load Animations
+ * 
+ * 5. RESPONSIVE DESIGN
+ *    - Mobile Breakpoints
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. HERO SECTION
+ * ============================================ */
+
+/* Hero Section - Intel Page */
+.intel-page .hero {
+  background-image: url("images/image1.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-color: #1a1a1a;
+}
+
+/* Darken overlay for better text visibility - Intel page */
+.intel-page .hero::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 10, 10, 0.6) 0%,
+    rgba(10, 10, 10, 0.85) 100%
+  ) !important;
+}
+
+/* Enhanced hero paragraph visibility for intel page */
+.intel-page .hero p {
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(0, 255, 194, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.9),
+    0 4px 12px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(0, 255, 194, 0.9) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(0, 255, 194, 0.5));
+  max-width: 700px;
+  margin: 1.5rem auto;
+}
+
+/* ============================================
+ * 2. PHILOSOPHY SECTION
+ * ============================================ */
+
+/* Philosophy Section */
+.philosophy {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 6rem;
+}
+
+.philosophy p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+/* ============================================
+ * 3. CADRE SECTION
+ * ============================================ */
+
+/* Cadre Grid */
+.cadre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cadre-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cadre-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 300%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-secondary),
+    transparent
+  );
+  animation: scanline 4s linear infinite;
+}
+
+.cadre-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--color-secondary);
+  margin: 0 auto 1.5rem;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(120%);
+  transition: filter var(--transition-fast);
+}
+
+.cadre-card:hover .cadre-img {
+  filter: grayscale(0) contrast(100%);
+}
+
+.cadre-card h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.cadre-callsign {
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cadre-bio {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Cadre Stats */
+.cadre-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+  gap: 1rem;
+}
+
+.cadre-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cadre-stat .stat-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.cadre-stat .stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cadre-card:hover .cadre-stat .stat-value {
+  color: var(--color-primary);
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .cadre-stats {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .cadre-stat {
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cadre-stat .stat-value {
+    font-size: 1.3rem;
+  }
+  
+  .cadre-stat .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .philosophy-content h2,
+  .cadre-content h2 {
+    font-size: 2rem;
+  }
+
+  .philosophy-content p,
+  .cadre-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .philosophy-content h2,
+  .cadre-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .cadre-stat .stat-value {
+    font-size: 1.1rem;
+  }
+
+  .cadre-stat .stat-label {
+    font-size: 0.65rem;
+  }
+}
+
+/* ============================================
+ * 4. ANIMATIONS
+ * ============================================ */
+
+/* Page Load Animations */
+#philosophy,
+#cadre {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+#philosophy {
+  animation-delay: 0.2s;
+}
+
+#cadre {
+  animation-delay: 0.4s;
+}
+

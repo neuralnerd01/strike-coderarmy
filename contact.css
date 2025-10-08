@@ -1,0 +1,210 @@
+/*
+ * STRIKE - Contact Page Styles
+ * Contact form and information
+ */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. HERO SECTION
+ *    - Hero Background
+ *    - Hero Overlay
+ *    - Hero Paragraph
+ * 
+ * 2. CONTACT FORM
+ *    - Form Container
+ *    - Form Groups
+ *    - Form Controls
+ *    - Textarea
+ * 
+ * 3. CONTACT INFO
+ *    - Info Section
+ *    - Contact Details
+ * 
+ * 4. ANIMATIONS
+ *    - Page Load Effects
+ * 
+ * 5. RESPONSIVE DESIGN
+ *    - Tablet Breakpoint
+ *    - Mobile Breakpoint
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. HERO SECTION
+ * ============================================ */
+
+/* Hero Section - Contact Page */
+.contact-page .hero {
+  background-image: url("images/image3.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-color: #1a1a1a;
+}
+
+/* Darken overlay for better text visibility - Contact page */
+.contact-page .hero::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(10, 10, 10, 0.6) 0%,
+    rgba(10, 10, 10, 0.85) 100%
+  ) !important;
+}
+
+/* Enhanced hero paragraph visibility for contact page */
+.contact-page .hero p {
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(0, 255, 194, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.9),
+    0 4px 12px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(0, 255, 194, 0.9) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(0, 255, 194, 0.5));
+  max-width: 700px;
+  margin: 1.5rem auto;
+}
+
+/* ============================================
+ * 2. CONTACT FORM
+ * ============================================ */
+
+/* Contact Wrapper */
+.contact-wrapper {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+/* Contact Form */
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.contact-form .form-control {
+  width: 100%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.contact-form .form-control:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 10px var(--color-secondary);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* ============================================
+ * 3. CONTACT INFO
+ * ============================================ */
+
+/* Contact Info */
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.contact-info strong {
+  color: var(--color-text);
+}
+
+.contact-info a {
+  word-break: break-all;
+}
+
+/* ============================================
+ * 4. ANIMATIONS
+ * ============================================ */
+
+/* Page Load Animation */
+.contact-wrapper {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+/* ============================================
+ * 5. RESPONSIVE DESIGN
+ * ============================================ */
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding: 2rem;
+  }
+
+  .contact-info h2 {
+    font-size: 2rem;
+  }
+
+  .contact-method h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-wrapper {
+    padding: 1.5rem;
+  }
+
+  .contact-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-method {
+    padding: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+}
+

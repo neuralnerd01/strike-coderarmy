@@ -1,0 +1,480 @@
+/* STATS MODAL SYSTEM - ADVANCED ANIMATIONS */
+
+/* ============================================
+ * TABLE OF CONTENTS
+ * ============================================
+ * 
+ * 1. STAT CARD INTERACTIONS
+ * 2. MODAL STRUCTURE
+ * 3. MODAL HEADER & ICONS
+ * 4. MODAL CONTENT & DETAILS
+ * 5. MODAL ANIMATIONS
+ * 6. RESPONSIVE DESIGN
+ * 
+ * ============================================ */
+
+/* ============================================
+ * 1. STAT CARD INTERACTIONS
+ * ============================================ */
+
+/* Hide checkbox toggles */
+.stat-modal-toggle {
+  display: none;
+}
+
+/* Make stat cards interactive */
+.stat-card-interactive {
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover text that appears on hover */
+.stat-hover-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #00bfff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Cool hover effects on stat cards */
+.stat-card-interactive:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.3),
+    0 0 60px rgba(0, 255, 255, 0.2),
+    0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-card-interactive:hover .stat-hover-text {
+  opacity: 1;
+}
+
+.stat-card-interactive:hover .stat-number {
+  color: var(--gold);
+  text-shadow: 
+    0 0 10px var(--gold),
+    0 0 20px var(--gold),
+    0 0 30px var(--gold);
+}
+
+/* Pulse animation on hover */
+.stat-card-interactive::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+  border-radius: 50%;
+}
+
+.stat-card-interactive:hover::before {
+  transform: translate(-50%, -50%) scale(2);
+}
+
+/* Border glow effect */
+.stat-card-interactive::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--cyan);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card-interactive:hover::after {
+  opacity: 1;
+  animation: borderGlow 2s infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--cyan), 0 0 10px var(--cyan);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--cyan), 0 0 20px var(--cyan), 0 0 30px var(--cyan);
+  }
+}
+
+/* ==========================================
+   MODAL OVERLAY - HIDDEN STATE
+   ========================================== */
+
+.stat-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.stat-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/*  MODAL - HIDDEN STATE */
+
+.stat-modal {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(10, 15, 30, 0.95);
+  border: 1px solid var(--cyan);
+  border-radius: 15px;
+  transform: translate(0, 0) scale(0);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-delay: 0.5s;
+  box-shadow: 
+    0 0 40px rgba(0, 255, 255, 0.3),
+    inset 0 0 40px rgba(0, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+/*    MODAL HEADER - HIDDEN STATE  */
+
+.stat-modal-header {
+  position: relative;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+  border-bottom: 2px solid var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translate(0, 70px);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+/* Modal icons */
+.stat-modal-icon,
+.stat-modal-icon-2,
+.stat-modal-icon-3 {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.stat-modal-icon {
+  transform: rotate(-80deg) translate(-50px, -50px);
+  transition-delay: 0.3s;
+}
+
+.stat-modal-icon-2 {
+  transform: rotate(80deg) translate(50px, 50px);
+  transition-delay: 0.5s;
+  font-size: 3rem;
+  top: 20px;
+  right: 30px;
+}
+
+.stat-modal-icon-3 {
+  transform: rotate(-60deg) translate(-40px, 40px);
+  transition-delay: 0.7s;
+  font-size: 2.5rem;
+  bottom: 20px;
+  left: 30px;
+}
+
+/*  MODAL CONTENT - HIDDEN STATE  */
+
+.stat-modal-content {
+  padding: 40px;
+  transform: translate(0, 70px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  transition-delay: 0.2s;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.stat-modal-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.stat-modal-description {
+  margin-bottom: 30px;
+}
+
+.stat-modal-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.stat-modal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stat-modal-list li {
+  padding: 12px 20px;
+  margin: 10px 0;
+  background: rgba(0, 255, 255, 0.05);
+  border-left: 3px solid var(--gold);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.stat-modal-list li:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transform: translateX(10px);
+  border-left-color: var(--cyan);
+}
+
+/* ==========================================
+   MODAL ACTIONS
+   ========================================== */
+
+.stat-modal-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-modal-btn-close,
+.stat-modal-btn-enroll {
+  flex: 1;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+}
+
+.stat-modal-btn-close {
+  background: transparent;
+  color: var(--cyan);
+  border: 2px solid var(--cyan);
+}
+
+.stat-modal-btn-close:hover {
+  background: var(--cyan);
+  color: var(--dark-bg);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.stat-modal-btn-enroll {
+  background: linear-gradient(135deg, var(--gold) 0%, #ff9800 100%);
+  color: var(--dark-bg);
+  border: 2px solid var(--gold);
+}
+
+.stat-modal-btn-enroll:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+/* ==========================================
+   OPENED STATE - USING :has() SELECTOR
+   ========================================== */
+
+/* Show overlay when modal is checked */
+.stat-modal-toggle:checked ~ .stat-modal-overlay {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: all;
+}
+
+/* Show modal with scale animation */
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal {
+  transform: translate(0, 0) scale(1);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-delay: 0s;
+}
+
+/* Slide header down */
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal-header {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition-delay: 0.1s;
+}
+
+/* Animate icons with rotation */
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal-icon {
+  opacity: 1;
+  transform: rotate(-20deg) translate(0, 0);
+  transition-delay: 0.3s;
+}
+
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal-icon-2 {
+  opacity: 0.7;
+  transform: rotate(20deg) translate(0, 0);
+  transition-delay: 0.5s;
+}
+
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal-icon-3 {
+  opacity: 0.5;
+  transform: rotate(15deg) translate(0, 0);
+  transition-delay: 0.7s;
+}
+
+/* Slide content up */
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal-content {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition-delay: 0.3s;
+}
+
+/* Enable pointer events and visibility on wrapper when modal is open */
+.stat-modal-wrapper:has(.stat-modal-toggle:checked) {
+  pointer-events: all;
+  z-index: 99999;
+  visibility: visible;
+}
+
+/* Alternative fallback for browsers without :has() support */
+.stat-modal-toggle:checked ~ .stat-modal-overlay {
+  z-index: 99999;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+  .stat-modal {
+    width: 95%;
+    max-width: none;
+  }
+
+  .stat-modal-content {
+    padding: 30px 20px;
+  }
+
+  .stat-modal-title {
+    font-size: 1.4rem;
+  }
+
+  .stat-modal-description p {
+    font-size: 1rem;
+  }
+
+  .stat-modal-actions {
+    flex-direction: column;
+  }
+
+  .stat-modal-icon {
+    font-size: 3rem;
+  }
+
+  .stat-modal-icon-2,
+  .stat-modal-icon-3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-modal-header {
+    height: 120px;
+  }
+
+  .stat-modal-content {
+    padding: 20px 15px;
+  }
+
+  .stat-modal-title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .stat-modal-list li {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .stat-modal-btn-close,
+  .stat-modal-btn-enroll {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================
+   ADDITIONAL ANIMATIONS
+   ========================================== */
+
+/* Glowing effect on modal border */
+@keyframes modalGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 40px rgba(0, 255, 255, 0.3),
+      inset 0 0 40px rgba(0, 255, 255, 0.05);
+  }
+  50% {
+    box-shadow: 
+      0 0 60px rgba(0, 255, 255, 0.5),
+      inset 0 0 60px rgba(0, 255, 255, 0.1);
+  }
+}
+
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal {
+  animation: modalGlow 3s infinite;
+}
+
+/* Floating animation for icons */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: rotate(-20deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-20deg) translateY(-10px);
+  }
+}
+
+.stat-modal-toggle:checked ~ .stat-modal-overlay .stat-modal-icon {
+  animation: floatIcon 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
