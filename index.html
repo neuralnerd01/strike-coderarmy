@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRIKE - Elite Tactical Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="loader.css" />
+    <link rel="stylesheet" href="features.css" />
+    <link rel="stylesheet" href="advanced-features.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="stats-modal.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body class="home-page">
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+      <div class="loader-grid"></div>
+      <div class="loader-brackets">
+        <div class="bracket bracket-tl"></div>
+        <div class="bracket bracket-tr"></div>
+        <div class="bracket bracket-bl"></div>
+        <div class="bracket bracket-br"></div>
+      </div>
+      <div class="loader-content">
+        <h1 class="loader-logo">STRIKE</h1>
+        <p class="loader-subtitle">Elite Tactical Training</p>
+        <div class="loader-countdown">
+          <span class="countdown-label">Initializing</span>
+          <span class="countdown-number">3</span>
+        </div>
+        <div class="loader-progress">
+          <div class="progress-bar"></div>
+        </div>
+        <p class="loader-status">Systems Online</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-content">
+      <!-- Scroll Progress Indicator -->
+      <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+      </div>
+
+      <!-- Notification Banner -->
+      <input type="checkbox" id="notification-toggle" checked />
+      <div class="notification-banner">
+        <div class="notification-content">
+          <span class="notification-text"
+            >⚡ New Mission Available: Advanced AI & Machine Learning ⚡</span
+          >
+          <label for="notification-toggle" class="notification-close"
+            >DISMISS</label
+          >
+        </div>
+      </div>
+
+      <header class="header">
+        <a href="index.html" class="logo">STRIKE</a>
+        <input type="checkbox" id="nav-toggle" title="Toggle navigation menu" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+        </label>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search Courses..."
+          />
+          <div class="search-dropdown">
+            <a href="#courses" class="search-item"
+              >Data Structures & Algorithms</a
+            >
+            <a href="#courses" class="search-item">System Design: LLD</a>
+            <a href="#courses" class="search-item">System Design: HLD</a>
+            <a href="#courses" class="search-item"
+              >DevOps & Cloud Infrastructure</a
+            >
+            <a href="#courses" class="search-item">SQL & Database Mastery</a>
+            <a href="#courses" class="search-item">OS & Computer Networks</a>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="missions.html">Missions</a></li>
+          <li><a href="features-showcase.html">Features</a></li>
+          <li><a href="intel.html">Intel</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signup.html" class="nav-btn-signup">Sign Up</a></li>
+        </ul>
+      </header>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <ul class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-separator">›</li>
+          <li class="breadcrumb-item active">Mission Roster</li>
+        </ul>
+      </nav>
+
+      <!-- Floating Navigation Menu -->
+      <input type="checkbox" id="nav-menu-toggle" class="nav-menu-checkbox" />
+      <label for="nav-menu-toggle" class="nav-menu-trigger">
+        <span class="nav-menu-icon">☰</span>
+        <span class="nav-menu-text">Quick Nav</span>
+      </label>
+      <nav class="floating-nav-menu">
+        <div class="floating-nav-header">
+          <h3>Page Navigation</h3>
+          <label for="nav-menu-toggle" class="nav-menu-close">✕</label>
+        </div>
+        <ul class="floating-nav-list">
+          <li>
+            <a href="#hero" class="nav-menu-link">
+              <span class="nav-number">01</span>
+              <span class="nav-text">Hero</span>
+            </a>
+          </li>
+          <li>
+            <a href="#stats" class="nav-menu-link">
+              <span class="nav-number">02</span>
+              <span class="nav-text">Combat Effectiveness</span>
+            </a>
+          </li>
+          <li>
+            <a href="#courses" class="nav-menu-link">
+              <span class="nav-number">03</span>
+              <span class="nav-text">Mission Roster</span>
+            </a>
+          </li>
+          <li>
+            <a href="#roadmap" class="nav-menu-link">
+              <span class="nav-number">04</span>
+              <span class="nav-text">Training Roadmap</span>
+            </a>
+          </li>
+          <li>
+            <a href="#journey" class="nav-menu-link">
+              <span class="nav-number">05</span>
+              <span class="nav-text">Your Training Journey</span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills" class="nav-menu-link">
+              <span class="nav-number">06</span>
+              <span class="nav-text">Tactical Skill Mastery</span>
+            </a>
+          </li>
+          <li>
+            <a href="#technologies" class="nav-menu-link">
+              <span class="nav-number">07</span>
+              <span class="nav-text">Core Technologies</span>
+            </a>
+          </li>
+          <li>
+            <a href="#instructors" class="nav-menu-link">
+              <span class="nav-number">08</span>
+              <span class="nav-text">Command Squad</span>
+            </a>
+          </li>
+          <li>
+            <a href="#testimonials" class="nav-menu-link">
+              <span class="nav-number">09</span>
+              <span class="nav-text">Field Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="#comparison" class="nav-menu-link">
+              <span class="nav-number">10</span>
+              <span class="nav-text">Mission Comparison Matrix</span>
+            </a>
+          </li>
+          <li>
+            <a href="#cohort" class="nav-menu-link">
+              <span class="nav-number">11</span>
+              <span class="nav-text">Next Cohort Launch</span>
+            </a>
+          </li>
+          <li>
+            <a href="#faq" class="nav-menu-link">
+              <span class="nav-number">12</span>
+              <span class="nav-text">Intel Brief</span>
+            </a>
+          </li>
+        </ul>
+        <div class="floating-nav-footer">
+          <span class="nav-feature-count">12 Sections</span>
+        </div>
+      </nav>
+
+      <!-- Modal System -->
+      <!-- Enrollment Modal -->
+      <input type="checkbox" id="modal-enrollment" class="modal-toggle" />
+      <div class="modal-overlay">
+        <div class="modal-container">
+          <label for="modal-enrollment" class="modal-close">&times;</label>
+          <div class="modal-header">
+            <h2 class="modal-title">ENLIST NOW</h2>
+            <p class="modal-subtitle">Begin Your Tactical Training</p>
+          </div>
+          <div class="modal-body">
+            <form class="modal-form">
+              <div class="form-group">
+                <label for="enroll-name" class="form-label"
+                  >Operative Name</label
+                >
+                <input
+                  type="text"
+                  id="enroll-name"
+                  class="form-input"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="enroll-email" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="enroll-email"
+                  class="form-input"
+                  placeholder="operative@strike.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="enroll-course" class="form-label"
+                  >Select Mission</label
+                >
+                <select id="enroll-course" class="form-select" required>
+                  <option value="">Choose your path...</option>
+                  <option value="dsa">Data Structures & Algorithms</option>
+                  <option value="lld">System Design: LLD</option>
+                  <option value="hld">System Design: HLD</option>
+                  <option value="ai">Generative AI</option>
+                  <option value="blockchain">Blockchain Development</option>
+                  <option value="mern">Web Development (MERN)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="enroll-level" class="form-label"
+                  >Experience Level</label
+                >
+                <select id="enroll-level" class="form-select" required>
+                  <option value="">Select rank...</option>
+                  <option value="recruit">Recruit (Beginner)</option>
+                  <option value="regular">Regular (Intermediate)</option>
+                  <option value="veteran">Veteran (Advanced)</option>
+                  <option value="elite">Elite (Expert)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-checkbox-label">
+                  <input type="checkbox" class="form-checkbox" required />
+                  <span
+                    >I accept the tactical protocols and terms of service</span
+                  >
+                </label>
+              </div>
+              <div class="modal-actions">
+                <button type="submit" class="btn modal-btn-primary">
+                  Deploy
+                </button>
+                <label for="modal-enrollment" class="btn modal-btn-secondary"
+                  >Abort</label
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Modal -->
+      <input type="checkbox" id="modal-contact" class="modal-toggle" />
+      <div class="modal-overlay">
+        <div class="modal-container">
+          <label for="modal-contact" class="modal-close">&times;</label>
+          <div class="modal-header">
+            <h2 class="modal-title">ESTABLISH COMMS</h2>
+            <p class="modal-subtitle">Transmit Your Signal</p>
+          </div>
+          <div class="modal-body">
+            <form class="modal-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  class="form-input"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  class="form-input"
+                  placeholder="email@example.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input
+                  type="text"
+                  id="contact-subject"
+                  class="form-input"
+                  placeholder="Mission Inquiry"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea
+                  id="contact-message"
+                  class="form-textarea"
+                  rows="5"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+              </div>
+              <div class="modal-actions">
+                <button type="submit" class="btn modal-btn-primary">
+                  Send Transmission
+                </button>
+                <label for="modal-contact" class="btn modal-btn-secondary"
+                  >Cancel</label
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Modal (Multipurpose) -->
+      <input type="checkbox" id="modal-info" class="modal-toggle" />
+      <div class="modal-overlay">
+        <div class="modal-container modal-small">
+          <label for="modal-info" class="modal-close">&times;</label>
+          <div class="modal-header">
+            <h2 class="modal-title">MISSION ALERT</h2>
+          </div>
+          <div class="modal-body">
+            <p class="modal-text">
+              This feature is currently under development. Stay tuned for
+              deployment updates!
+            </p>
+            <div class="modal-actions">
+              <label for="modal-info" class="btn modal-btn-primary"
+                >Acknowledged</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <section id="hero" class="hero">
+          <!-- Rotating Background Images -->
+          <div class="hero-bg-slider">
+            <div class="hero-bg-slide"></div>
+            <div class="hero-bg-slide"></div>
+            <div class="hero-bg-slide"></div>
+            <div class="hero-bg-slide"></div>
+            <div class="hero-bg-slide"></div>
+          </div>
+
+          <!-- Matrix Code Particles Canvas -->
+          <canvas id="matrix-particles" class="matrix-particles"></canvas>
+
+          <!-- Tactical Grid Overlay -->
+          <div class="tactical-grid-overlay"></div>
+
+          <div class="hero-content">
+            <div class="hero-title-wrapper">
+              <h1 class="hero-title-animated">STRIKE</h1>
+              <div class="hero-badge-wrapper">
+                <span class="hero-subtitle">Presented by</span>
+                <a
+                  href="https://coderarmy.in/#home"
+                  target="_blank"
+                  rel="noopener"
+                  class="hero-badge pulsing-badge"
+                  >CODER ARMY</a
+                >
+              </div>
+            </div>
+            <p class="hero-description">
+              Elite Tactical Training for the Next Generation of Tech
+              Operatives. Master the code. Dominate the field.
+            </p>
+            <label for="modal-enrollment" class="btn">Enlist Now</label>
+          </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="stats" class="stats-section">
+          <div class="section-title">
+            <h2>Combat Effectiveness</h2>
+          </div>
+          <div class="stats-grid">
+            <!-- Stat Card 1 - Clickable with Modal -->
+            <label for="stat-modal-1" class="stat-card stat-card-interactive">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Operatives Trained</div>
+              <div class="stat-hover-text">Click for Details</div>
+            </label>
+
+            <!-- Stat Card 2 - Clickable with Modal -->
+            <label for="stat-modal-2" class="stat-card stat-card-interactive">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Active Missions</div>
+              <div class="stat-hover-text">Click for Details</div>
+            </label>
+
+            <!-- Stat Card 3 - Clickable with Modal -->
+            <label for="stat-modal-3" class="stat-card stat-card-interactive">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Mission Success Rate</div>
+              <div class="stat-hover-text">Click for Details</div>
+            </label>
+
+            <!-- Stat Card 4 - Clickable with Modal -->
+            <label for="stat-modal-4" class="stat-card stat-card-interactive">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Support Available</div>
+              <div class="stat-hover-text">Click for Details</div>
+            </label>
+          </div>
+        </section>
+
+        <!-- Stat Modals -->
+        <!-- Modal 1 - Operatives Trained -->
+        <div class="stat-modal-wrapper">
+          <input type="checkbox" id="stat-modal-1" class="stat-modal-toggle" />
+          <div class="stat-modal-overlay">
+            <div class="stat-modal">
+              <div class="stat-modal-header">
+                <div class="stat-modal-icon">👨‍💻</div>
+                <div class="stat-modal-icon-2">⚡</div>
+                <div class="stat-modal-icon-3">🎯</div>
+              </div>
+              <div class="stat-modal-content">
+                <h2 class="stat-modal-title">500+ OPERATIVES TRAINED</h2>
+                <div class="stat-modal-description">
+                  <p>
+                    Join our elite community of over 500 trained tech operatives
+                    who have successfully completed our tactical training
+                    programs.
+                  </p>
+                  <ul class="stat-modal-list">
+                    <li>🏆 95% job placement rate</li>
+                    <li>💰 Average salary increase: 40%</li>
+                    <li>🌍 Working in 50+ countries</li>
+                    <li>⭐ 4.9/5 average rating</li>
+                  </ul>
+                </div>
+                <div class="stat-modal-actions">
+                  <label for="stat-modal-1" class="stat-modal-btn-close"
+                    >CLOSE</label
+                  >
+                  <label
+                    for="modal-enrollment"
+                    class="stat-modal-btn-enroll"
+                    onclick="document.getElementById('stat-modal-1').checked = false;"
+                    >ENLIST NOW</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 2 - Active Missions -->
+        <div class="stat-modal-wrapper">
+          <input type="checkbox" id="stat-modal-2" class="stat-modal-toggle" />
+          <div class="stat-modal-overlay">
+            <div class="stat-modal">
+              <div class="stat-modal-header">
+                <div class="stat-modal-icon">🚀</div>
+                <div class="stat-modal-icon-2">💻</div>
+                <div class="stat-modal-icon-3">🔥</div>
+              </div>
+              <div class="stat-modal-content">
+                <h2 class="stat-modal-title">50+ ACTIVE MISSIONS</h2>
+                <div class="stat-modal-description">
+                  <p>
+                    Choose from over 50 active training missions covering
+                    cutting-edge technologies and methodologies.
+                  </p>
+                  <ul class="stat-modal-list">
+                    <li>📚 6 Core Disciplines</li>
+                    <li>🎓 Beginner to Elite levels</li>
+                    <li>⏱️ Self-paced learning</li>
+                    <li>🔄 Regular updates & new missions</li>
+                  </ul>
+                </div>
+                <div class="stat-modal-actions">
+                  <label for="stat-modal-2" class="stat-modal-btn-close"
+                    >CLOSE</label
+                  >
+                  <a href="missions.html" class="stat-modal-btn-enroll"
+                    >VIEW MISSIONS</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 3 - Mission Success Rate -->
+        <div class="stat-modal-wrapper">
+          <input type="checkbox" id="stat-modal-3" class="stat-modal-toggle" />
+          <div class="stat-modal-overlay">
+            <div class="stat-modal">
+              <div class="stat-modal-header">
+                <div class="stat-modal-icon">🏅</div>
+                <div class="stat-modal-icon-2">✨</div>
+                <div class="stat-modal-icon-3">💎</div>
+              </div>
+              <div class="stat-modal-content">
+                <h2 class="stat-modal-title">95% SUCCESS RATE</h2>
+                <div class="stat-modal-description">
+                  <p>
+                    Our proven tactical training methodology ensures a 95%
+                    mission completion rate across all programs.
+                  </p>
+                  <ul class="stat-modal-list">
+                    <li>✅ Structured learning paths</li>
+                    <li>👨‍🏫 Expert instructor support</li>
+                    <li>🎯 Real-world projects</li>
+                    <li>📊 Progress tracking & feedback</li>
+                  </ul>
+                </div>
+                <div class="stat-modal-actions">
+                  <label for="stat-modal-3" class="stat-modal-btn-close"
+                    >CLOSE</label
+                  >
+                  <label
+                    for="modal-enrollment"
+                    class="stat-modal-btn-enroll"
+                    onclick="document.getElementById('stat-modal-3').checked = false;"
+                    >START NOW</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal 4 - Support Available -->
+        <div class="stat-modal-wrapper">
+          <input type="checkbox" id="stat-modal-4" class="stat-modal-toggle" />
+          <div class="stat-modal-overlay">
+            <div class="stat-modal">
+              <div class="stat-modal-header">
+                <div class="stat-modal-icon">🛡️</div>
+                <div class="stat-modal-icon-2">💬</div>
+                <div class="stat-modal-icon-3">⏰</div>
+              </div>
+              <div class="stat-modal-content">
+                <h2 class="stat-modal-title">24/7 TACTICAL SUPPORT</h2>
+                <div class="stat-modal-description">
+                  <p>
+                    Round-the-clock support from our elite team ensures you're
+                    never alone in your training journey.
+                  </p>
+                  <ul class="stat-modal-list">
+                    <li>🎧 Live chat support</li>
+                    <li>📧 Email assistance</li>
+                    <li>💡 Community forums</li>
+                    <li>📹 Weekly live sessions</li>
+                  </ul>
+                </div>
+                <div class="stat-modal-actions">
+                  <label for="stat-modal-4" class="stat-modal-btn-close"
+                    >CLOSE</label
+                  >
+                  <label
+                    for="modal-contact"
+                    class="stat-modal-btn-enroll"
+                    onclick="document.getElementById('stat-modal-4').checked = false;"
+                    >CONTACT US</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section id="courses" class="container">
+          <div class="section-title">
+            <h2>Mission Roster</h2>
+          </div>
+          <div class="courses-grid">
+            <!-- Course Card 1 -->
+            <div class="course-card">
+              <div class="card-content">
+                <h3>Data Structures & Algorithms</h3>
+                <div class="card-rank">Difficulty: Veteran</div>
+              </div>
+              <div class="card-hover-content">
+                <h4>Mission Objectives:</h4>
+                <ul>
+                  <li>Master core data structures</li>
+                  <li>Optimize algorithmic complexity</li>
+                  <li>Solve complex logic challenges</li>
+                </ul>
+                <label for="modal-enrollment" class="btn card-enroll-btn"
+                  >Enroll Now</label
+                >
+              </div>
+            </div>
+            <!-- Course Card 2 -->
+            <div class="course-card">
+              <div class="card-content">
+                <h3>System Design: LLD</h3>
+                <div class="card-rank">Difficulty: Hardened</div>
+              </div>
+              <div class="card-hover-content">
+                <h4>Mission Objectives:</h4>
+                <ul>
+                  <li>Architect robust software components</li>
+                  <li>Apply SOLID & GRASP principles</li>
+                  <li>Design scalable micro-architectures</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Course Card 3 -->
+            <div class="course-card">
+              <div class="card-content">
+                <h3>System Design: HLD</h3>
+                <div class="card-rank">Difficulty: Elite</div>
+              </div>
+              <div class="card-hover-content">
+                <h4>Mission Objectives:</h4>
+                <ul>
+                  <li>Design distributed, fault-tolerant systems</li>
+                  <li>Master scalability and performance</li>
+                  <li>Architect for global deployment</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Course Card 4 -->
+            <div class="course-card">
+              <div class="card-content">
+                <h3>Generative AI</h3>
+                <div class="card-rank">Difficulty: Specialist</div>
+              </div>
+              <div class="card-hover-content">
+                <h4>Mission Objectives:</h4>
+                <ul>
+                  <li>Implement Large Language Models (LLMs)</li>
+                  <li>Master prompt engineering techniques</li>
+                  <li>Build AI-powered applications</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Course Card 5 -->
+            <div class="course-card">
+              <div class="card-content">
+                <h3>Blockchain Development</h3>
+                <div class="card-rank">Difficulty: Hardened</div>
+              </div>
+              <div class="card-hover-content">
+                <h4>Mission Objectives:</h4>
+                <ul>
+                  <li>Develop and deploy smart contracts</li>
+                  <li>Understand decentralized consensus</li>
+                  <li>Build secure DApps</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Course Card 6 -->
+            <div class="course-card">
+              <div class="card-content">
+                <h3>Web Development (MERN)</h3>
+                <div class="card-rank">Difficulty: Regular</div>
+              </div>
+              <div class="card-hover-content">
+                <h4>Mission Objectives:</h4>
+                <ul>
+                  <li>Build full-stack applications</li>
+                  <li>Master MongoDB, Express, React, Node.js</li>
+                  <li>Deploy scalable web services</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #27 - Learning Path Roadmap -->
+        <section id="roadmap" class="roadmap-section container">
+          <div class="section-title">
+            <h2>Training Roadmap</h2>
+            <p>Your tactical progression</p>
+          </div>
+          <div class="roadmap-path"></div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-marker">1</div>
+            <div class="roadmap-content">
+              <h3 class="roadmap-title">Foundation Phase</h3>
+              <p class="roadmap-desc">
+                Master HTML, CSS, and JavaScript fundamentals. Build your first
+                responsive websites and understand core web technologies.
+              </p>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">HTML5</span>
+                <span class="roadmap-tag">CSS3</span>
+                <span class="roadmap-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-marker">2</div>
+            <div class="roadmap-content">
+              <h3 class="roadmap-title">Framework Mastery</h3>
+              <p class="roadmap-desc">
+                Dive deep into modern frameworks like React, Vue, or Angular.
+                Learn component architecture and state management.
+              </p>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">React</span>
+                <span class="roadmap-tag">Redux</span>
+                <span class="roadmap-tag">TypeScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-marker">3</div>
+            <div class="roadmap-content">
+              <h3 class="roadmap-title">Backend Operations</h3>
+              <p class="roadmap-desc">
+                Build robust APIs and server-side applications. Master
+                databases, authentication, and cloud deployment.
+              </p>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">Node.js</span>
+                <span class="roadmap-tag">MongoDB</span>
+                <span class="roadmap-tag">AWS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-marker">4</div>
+            <div class="roadmap-content">
+              <h3 class="roadmap-title">Elite Deployment</h3>
+              <p class="roadmap-desc">
+                Advanced DevOps, CI/CD pipelines, containerization, and
+                production-grade security implementations.
+              </p>
+              <div class="roadmap-tags">
+                <span class="roadmap-tag">Docker</span>
+                <span class="roadmap-tag">Kubernetes</span>
+                <span class="roadmap-tag">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #18 - Progress Steps -->
+        <section id="journey" class="steps-container container">
+          <div class="section-title">
+            <h2>Your Training Journey</h2>
+            <p>Path to mastery</p>
+          </div>
+          <div class="steps-wrapper">
+            <div class="steps-line">
+              <div class="steps-line-fill"></div>
+            </div>
+            <div class="step completed">
+              <div class="step-circle">1</div>
+              <span class="step-label">Enlist</span>
+            </div>
+            <div class="step completed">
+              <div class="step-circle">2</div>
+              <span class="step-label">Train</span>
+            </div>
+            <div class="step active">
+              <div class="step-circle">3</div>
+              <span class="step-label">Deploy</span>
+            </div>
+            <div class="step">
+              <div class="step-circle">4</div>
+              <span class="step-label">Certify</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- #2 - Skill Progress Pie Chart -->
+        <section id="skills" class="skill-progress-section container">
+          <div class="section-title">
+            <h2>Tactical Skill Mastery</h2>
+            <p>Master the battlefield of code</p>
+          </div>
+
+          <div class="pie-chart-container">
+            <div class="pie-chart-wrapper">
+              <!-- Animated Pie Chart -->
+              <div class="pie-chart">
+                <div class="pie-segment pie-segment-1">
+                  <div class="pie-slice"></div>
+                </div>
+                <div class="pie-segment pie-segment-2">
+                  <div class="pie-slice"></div>
+                </div>
+                <div class="pie-segment pie-segment-3">
+                  <div class="pie-slice"></div>
+                </div>
+                <div class="pie-segment pie-segment-4">
+                  <div class="pie-slice"></div>
+                </div>
+                <div class="pie-segment pie-segment-5">
+                  <div class="pie-slice"></div>
+                </div>
+                <div class="pie-center">
+                  <div class="pie-center-content">
+                    <span class="pie-total">90%</span>
+                    <span class="pie-label">Average<br />Mastery</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tactical Grid Background -->
+              <div class="pie-grid-bg"></div>
+            </div>
+
+            <!-- Legend with Hover Effects -->
+            <div class="pie-legend">
+              <div class="legend-item legend-item-1">
+                <input
+                  type="checkbox"
+                  id="skill-1"
+                  class="legend-toggle"
+                  checked
+                />
+                <label for="skill-1" class="legend-label">
+                  <span class="legend-color"></span>
+                  <span class="legend-text">
+                    <span class="legend-name">Frontend Development</span>
+                    <span class="legend-percentage">95%</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="legend-item legend-item-2">
+                <input
+                  type="checkbox"
+                  id="skill-2"
+                  class="legend-toggle"
+                  checked
+                />
+                <label for="skill-2" class="legend-label">
+                  <span class="legend-color"></span>
+                  <span class="legend-text">
+                    <span class="legend-name">Backend Architecture</span>
+                    <span class="legend-percentage">88%</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="legend-item legend-item-3">
+                <input
+                  type="checkbox"
+                  id="skill-3"
+                  class="legend-toggle"
+                  checked
+                />
+                <label for="skill-3" class="legend-label">
+                  <span class="legend-color"></span>
+                  <span class="legend-text">
+                    <span class="legend-name">DevOps & Deployment</span>
+                    <span class="legend-percentage">92%</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="legend-item legend-item-4">
+                <input
+                  type="checkbox"
+                  id="skill-4"
+                  class="legend-toggle"
+                  checked
+                />
+                <label for="skill-4" class="legend-label">
+                  <span class="legend-color"></span>
+                  <span class="legend-text">
+                    <span class="legend-name">Database Management</span>
+                    <span class="legend-percentage">85%</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="legend-item legend-item-5">
+                <input
+                  type="checkbox"
+                  id="skill-5"
+                  class="legend-toggle"
+                  checked
+                />
+                <label for="skill-5" class="legend-label">
+                  <span class="legend-color"></span>
+                  <span class="legend-text">
+                    <span class="legend-name">Security & Testing</span>
+                    <span class="legend-percentage">90%</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #11 - Glassmorphism Cards -->
+        <section id="technologies" class="container">
+          <div class="section-title">
+            <h2>Core Technologies</h2>
+            <p>Master the arsenal</p>
+          </div>
+          <div class="course-grid">
+            <div class="glass-card">
+              <div class="glass-card-header">
+                <div class="glass-icon">⚡</div>
+                <h3 class="glass-title">React</h3>
+              </div>
+              <div class="glass-content">
+                <p>
+                  Build powerful user interfaces with component-based
+                  architecture. Master hooks, state management, and modern React
+                  patterns.
+                </p>
+              </div>
+            </div>
+            <div class="glass-card">
+              <div class="glass-card-header">
+                <div class="glass-icon">🚀</div>
+                <h3 class="glass-title">Node.js</h3>
+              </div>
+              <div class="glass-content">
+                <p>
+                  Create scalable backend services with JavaScript. Learn async
+                  programming, APIs, and server-side development.
+                </p>
+              </div>
+            </div>
+            <div class="glass-card">
+              <div class="glass-card-header">
+                <div class="glass-icon">🛡️</div>
+                <h3 class="glass-title">Security</h3>
+              </div>
+              <div class="glass-content">
+                <p>
+                  Implement enterprise-grade security. Master authentication,
+                  encryption, and vulnerability assessment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #28 - Instructor Cards -->
+        <section id="instructors" class="container">
+          <div class="section-title">
+            <h2>Command Squad</h2>
+            <p>Your elite instructors</p>
+          </div>
+          <div class="instructors-grid">
+            <div class="instructor-card">
+              <div class="instructor-avatar">
+                <img
+                  src="images/rohitbhainegi.jpeg"
+                  alt="Rohit Negi"
+                  class="instructor-image"
+                />
+              </div>
+              <div class="instructor-info">
+                <h3 class="instructor-name">Rohit Negi</h3>
+                <p class="instructor-role">Founder & Lead Instructor</p>
+                <p class="instructor-bio">
+                  Visionary behind Coder Army. Ex-SDE at Uber. Cracked GATE with
+                  AIR 202. Achieved India's highest tech placement in 2022.
+                </p>
+                <div class="instructor-stats">
+                  <div class="instructor-stat">
+                    <span class="stat-value">60K+</span>
+                    <span class="stat-label">Students</span>
+                  </div>
+                  <div class="instructor-stat">
+                    <span class="stat-value">10+</span>
+                    <span class="stat-label">Courses</span>
+                  </div>
+                  <div class="instructor-stat">
+                    <span class="stat-value">5.0</span>
+                    <span class="stat-label">Rating</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="instructor-card">
+              <div class="instructor-avatar">
+                <img
+                  src="images/adityasir.jpeg"
+                  alt="Aditya Tandon"
+                  class="instructor-image"
+                />
+              </div>
+              <div class="instructor-info">
+                <h3 class="instructor-name">Aditya Tandon</h3>
+                <p class="instructor-role">Co-Founder & Senior Educator</p>
+                <p class="instructor-bio">
+                  MTech in CSE from IIT Guwahati. Former Senior Software
+                  Engineer at Ola. Passionate about teaching and scaling tech
+                  talent.
+                </p>
+                <div class="instructor-stats">
+                  <div class="instructor-stat">
+                    <span class="stat-value">45K+</span>
+                    <span class="stat-label">Students</span>
+                  </div>
+                  <div class="instructor-stat">
+                    <span class="stat-value">10+</span>
+                    <span class="stat-label">Courses</span>
+                  </div>
+                  <div class="instructor-stat">
+                    <span class="stat-value">4.9</span>
+                    <span class="stat-label">Rating</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="instructor-card">
+              <div class="instructor-avatar">
+                <img
+                  src="images/surajjhaji.jpg"
+                  alt="Suraj Kumar Jha"
+                  class="instructor-image"
+                />
+              </div>
+              <div class="instructor-info">
+                <h3 class="instructor-name">Suraj Kumar Jha</h3>
+                <p class="instructor-role">GenZ Tech Mentor</p>
+                <p class="instructor-bio">
+                  Builder of onCodeSnippet and other cool things. Loves
+                  teaching, shipping code, and vibing with the dev community.
+                  Catch him on Twitter for tech drops and collabs.
+                </p>
+                <div class="instructor-stats">
+                  <div class="instructor-stat">
+                    <span class="stat-value">25K+</span>
+                    <span class="stat-label">Students</span>
+                  </div>
+                  <div class="instructor-stat">
+                    <span class="stat-value">7+</span>
+                    <span class="stat-label">Courses</span>
+                  </div>
+                  <div class="instructor-stat">
+                    <span class="stat-value">4.8</span>
+                    <span class="stat-label">Rating</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials Section - Field Reports -->
+        <section id="testimonials" class="field-reports-section">
+          <div class="section-title">
+            <h2>FIELD REPORTS</h2>
+            <p>Mission success stories from our elite operators</p>
+          </div>
+
+          <div class="field-reports-container">
+            <div class="reports-track">
+              <!-- Card 1 -->
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  STRIKE transformed my approach to system design. The tactical
+                  training methodology helped me land a senior engineer role at
+                  a top tech company. Mission accomplished!
+                </p>
+                <div class="report-author">Harkirat Singh</div>
+                <div class="report-role">FOUNDER @ 100xDEVS</div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  The data structures course is phenomenal. Real-world
+                  scenarios, elite instruction, and a community of driven
+                  operatives. Best investment in my career.
+                </p>
+                <div class="report-author">Hitesh Choudhary</div>
+                <div class="report-role">FOUNDER @ CHAI AUR CODE</div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  From beginner to deployment specialist in 6 months. The DevOps
+                  training at STRIKE equipped me with tactical skills that set
+                  me apart from other candidates.
+                </p>
+                <div class="report-author">Mannu Paaji</div>
+                <div class="report-role">FOUNDER @ ACETERNITY UI</div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  STRIKE's full-stack program exceeded all expectations. The
+                  hands-on projects and mentorship helped me transition from a
+                  junior to a team lead position in just one year.
+                </p>
+                <div class="report-author">Kunal Kushwaha</div>
+                <div class="report-role">FOUNDER @ WEMAKEDEVS</div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  The best coding bootcamp experience! STRIKE's tactical
+                  approach to teaching algorithms and problem-solving made
+                  complex concepts crystal clear. Highly recommended!
+                </p>
+                <div class="report-author">Alakh Pandey</div>
+                <div class="report-role">FOUNDER @ PW SKILLS</div>
+              </div>
+
+              <!-- Duplicate cards for seamless loop -->
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  STRIKE transformed my approach to system design. The tactical
+                  training methodology helped me land a senior engineer role at
+                  a top tech company. Mission accomplished!
+                </p>
+                <div class="report-author">Harkirat Singh</div>
+                <div class="report-role">FOUNDER @ 100xDEVS</div>
+              </div>
+
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  The data structures course is phenomenal. Real-world
+                  scenarios, elite instruction, and a community of driven
+                  operatives. Best investment in my career.
+                </p>
+                <div class="report-author">Hitesh Choudhary</div>
+                <div class="report-role">FOUNDER @ CHAI AUR CODE</div>
+              </div>
+
+              <div class="report-card">
+                <div class="card-blur-overlay"></div>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="report-quote">
+                  From beginner to deployment specialist in 6 months. The DevOps
+                  training at STRIKE equipped me with tactical skills that set
+                  me apart from other candidates.
+                </p>
+                <div class="report-author">Mannu Paaji</div>
+                <div class="report-role">FOUNDER @ ACETERNITY UI</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #3 - Course Comparison Table -->
+        <section id="comparison" class="comparison-table-section container">
+          <div class="section-title">
+            <h2>Mission Comparison Matrix</h2>
+            <p>Compare training programs</p>
+          </div>
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Recruit</th>
+                <th>Operator</th>
+                <th>Elite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">Video Tutorials</td>
+                <td><span class="comparison-check">✓</span></td>
+                <td><span class="comparison-check">✓</span></td>
+                <td><span class="comparison-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Code Challenges</td>
+                <td><span class="comparison-check">✓</span></td>
+                <td><span class="comparison-check">✓</span></td>
+                <td><span class="comparison-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">1-on-1 Mentorship</td>
+                <td><span class="comparison-cross">✕</span></td>
+                <td><span class="comparison-check">✓</span></td>
+                <td><span class="comparison-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Portfolio Review</td>
+                <td><span class="comparison-cross">✕</span></td>
+                <td><span class="comparison-check">✓</span></td>
+                <td><span class="comparison-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Job Placement</td>
+                <td><span class="comparison-cross">✕</span></td>
+                <td><span class="comparison-cross">✕</span></td>
+                <td><span class="comparison-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Lifetime Access</td>
+                <td><span class="comparison-cross">✕</span></td>
+                <td><span class="comparison-check">✓</span></td>
+                <td><span class="comparison-check">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- #20 - Countdown Timer -->
+        <section id="cohort" class="container countdown-section-diwali">
+          <div class="diwali-decorations">
+            <div class="diya diya-1"></div>
+            <div class="diya diya-2"></div>
+            <div class="diya diya-3"></div>
+            <div class="diya diya-4"></div>
+            <div class="firework firework-1"></div>
+            <div class="firework firework-2"></div>
+            <div class="firework firework-3"></div>
+          </div>
+
+          <div class="section-title diwali-title">
+            <h2>Next Cohort Launch - Diwali Special 🪔</h2>
+            <p>Secure your position | October 18, 2025</p>
+            <div class="diwali-subtitle">
+              <span class="festival-badge">✨ Festival of Lights Offer ✨</span>
+            </div>
+          </div>
+
+          <div class="launch-countdown diwali-countdown">
+            <div class="countdown-unit">
+              <div class="countdown-number-display diwali-number">
+                <span class="countdown-digit">12</span>
+                <div class="sparkle sparkle-1"></div>
+                <div class="sparkle sparkle-2"></div>
+              </div>
+              <span class="countdown-label-text">Days</span>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number-display diwali-number">
+                <span class="countdown-digit">00</span>
+                <div class="sparkle sparkle-1"></div>
+                <div class="sparkle sparkle-2"></div>
+              </div>
+              <span class="countdown-label-text">Hours</span>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number-display diwali-number">
+                <span class="countdown-digit">00</span>
+                <div class="sparkle sparkle-1"></div>
+                <div class="sparkle sparkle-2"></div>
+              </div>
+              <span class="countdown-label-text">Minutes</span>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number-display diwali-number">
+                <span class="countdown-digit">00</span>
+                <div class="sparkle sparkle-1"></div>
+                <div class="sparkle sparkle-2"></div>
+              </div>
+              <span class="countdown-label-text">Seconds</span>
+            </div>
+          </div>
+
+          <div class="diwali-message">
+            <p class="diwali-greeting">
+              🎆 Celebrate Knowledge with the Festival of Lights! 🎆
+            </p>
+            <p class="diwali-offer">
+              Special Diwali Launch Discount - Limited Seats Available
+            </p>
+          </div>
+        </section>
+
+        <!-- GAMIFICATION CLUSTER -->
+
+        <!-- #36 - XP Progress Bar -->
+        <section class="container">
+          <div class="section-title">
+            <h2>Your Battle Experience</h2>
+            <p>Track your progression</p>
+          </div>
+          <div class="xp-bar-container">
+            <div class="xp-header">
+              <span class="xp-level">Level 12</span>
+              <span class="xp-amount"
+                ><span class="xp-current">6,500</span> / 10,000 XP</span
+              >
+            </div>
+            <div class="xp-bar">
+              <div class="xp-fill"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #29 - Achievement Badges -->
+        <section class="container">
+          <div class="section-title">
+            <h2>Achievement Unlocks</h2>
+            <p>Earn your battle honors</p>
+          </div>
+          <div class="badges-container">
+            <div class="achievement-badge badge-unlocked">
+              <span class="badge-icon">🏆</span>
+              <div class="badge-tooltip">
+                <span class="badge-name">First Mission</span>
+                <span class="badge-desc">Complete your first course</span>
+              </div>
+            </div>
+            <div class="achievement-badge badge-unlocked">
+              <span class="badge-icon">⚡</span>
+              <div class="badge-tooltip">
+                <span class="badge-name">Speed Demon</span>
+                <span class="badge-desc">Finish 3 courses in a week</span>
+              </div>
+            </div>
+            <div class="achievement-badge badge-unlocked">
+              <span class="badge-icon">🔥</span>
+              <div class="badge-tooltip">
+                <span class="badge-name">Hot Streak</span>
+                <span class="badge-desc">7-day learning streak</span>
+              </div>
+            </div>
+            <div class="achievement-badge">
+              <span class="badge-icon">💎</span>
+              <div class="badge-tooltip">
+                <span class="badge-name">Elite Status</span>
+                <span class="badge-desc">Complete all courses</span>
+              </div>
+            </div>
+            <div class="achievement-badge">
+              <span class="badge-icon">🎯</span>
+              <div class="badge-tooltip">
+                <span class="badge-name">Perfectionist</span>
+                <span class="badge-desc">100% on all challenges</span>
+              </div>
+            </div>
+            <div class="achievement-badge">
+              <span class="badge-icon">🌟</span>
+              <div class="badge-tooltip">
+                <span class="badge-name">Rising Star</span>
+                <span class="badge-desc">Get featured review</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #37 - Daily Challenge -->
+        <section class="container">
+          <div class="section-title">
+            <h2>Mission Briefing</h2>
+            <p>Today's objective</p>
+          </div>
+          <div class="daily-challenge">
+            <div class="challenge-header">
+              <span class="challenge-badge">Daily Challenge</span>
+              <span class="challenge-timer">23:45:12</span>
+            </div>
+            <div class="challenge-content">
+              <h3 class="challenge-title">Implement Authentication System</h3>
+              <p class="challenge-desc">
+                Build a secure JWT-based authentication system with user
+                registration, login, and password reset functionality. Include
+                proper error handling and token refresh mechanism.
+              </p>
+              <div class="challenge-reward">
+                <span class="reward-icon">💰</span>
+                <div class="reward-text">
+                  <span class="reward-amount">+500 XP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #38 - Leaderboard -->
+        <section class="container">
+          <div class="leaderboard-container">
+            <div class="leaderboard-header">
+              <h2 class="leaderboard-title">Top Operators</h2>
+            </div>
+            <div class="leaderboard-table">
+              <div class="leaderboard-row">
+                <span class="leaderboard-rank">1</span>
+                <div class="leaderboard-player">
+                  <div class="player-avatar">AS</div>
+                  <span class="player-name">Abhishek Sharma</span>
+                </div>
+                <span class="leaderboard-score">25,480 XP</span>
+                <span class="leaderboard-badge">🥇</span>
+              </div>
+              <div class="leaderboard-row">
+                <span class="leaderboard-rank">2</span>
+                <div class="leaderboard-player">
+                  <div class="player-avatar">SK</div>
+                  <span class="player-name">Salman Khan</span>
+                </div>
+                <span class="leaderboard-score">23,150 XP</span>
+                <span class="leaderboard-badge">🥈</span>
+              </div>
+              <div class="leaderboard-row">
+                <span class="leaderboard-rank">3</span>
+                <div class="leaderboard-player">
+                  <div class="player-avatar">SR</div>
+                  <span class="player-name">Shah Rukh</span>
+                </div>
+                <span class="leaderboard-score">21,890 XP</span>
+                <span class="leaderboard-badge">🥉</span>
+              </div>
+              <div class="leaderboard-row">
+                <span class="leaderboard-rank">4</span>
+                <div class="leaderboard-player">
+                  <div class="player-avatar">RK</div>
+                  <span class="player-name">Ranbir Kapoor</span>
+                </div>
+                <span class="leaderboard-score">19,560 XP</span>
+                <span class="leaderboard-badge">⭐</span>
+              </div>
+              <div class="leaderboard-row">
+                <span class="leaderboard-rank">5</span>
+                <div class="leaderboard-player">
+                  <div class="player-avatar">TM</div>
+                  <span class="player-name">Tarini Mehra</span>
+                </div>
+                <span class="leaderboard-score">18,320 XP</span>
+                <span class="leaderboard-badge">⭐</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- #39 - Streak Counter -->
+        <section class="container">
+          <div class="section-title">
+            <h2>Commitment Streak</h2>
+            <p>Keep the fire burning</p>
+          </div>
+          <div class="streak-widget">
+            <div class="streak-icon">🔥</div>
+            <span class="streak-count">14</span>
+            <span class="streak-label">Day Streak</span>
+            <div class="streak-calendar">
+              <span class="streak-day active">M</span>
+              <span class="streak-day active">T</span>
+              <span class="streak-day active">W</span>
+              <span class="streak-day active">T</span>
+              <span class="streak-day active">F</span>
+              <span class="streak-day active">S</span>
+              <span class="streak-day today">S</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- #40 - Course Completion Checklist -->
+        <section class="container">
+          <div class="completion-checklist">
+            <div class="checklist-header">
+              <h3 class="checklist-title">Mission Objectives</h3>
+              <div class="checklist-progress">
+                <span class="progress-text">Progress</span>
+                <span class="progress-percentage">60%</span>
+              </div>
+              <div class="checklist-progress-bar">
+                <div class="checklist-progress-fill"></div>
+              </div>
+            </div>
+            <div class="checklist-items">
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-checkbox" checked />
+                <span class="checklist-checkmark"></span>
+                <span class="checklist-text"
+                  >Complete HTML/CSS Fundamentals</span
+                >
+                <span class="checklist-points">+200 XP</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-checkbox" checked />
+                <span class="checklist-checkmark"></span>
+                <span class="checklist-text">Master JavaScript Basics</span>
+                <span class="checklist-points">+300 XP</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-checkbox" checked />
+                <span class="checklist-checkmark"></span>
+                <span class="checklist-text"
+                  >Build First React Application</span
+                >
+                <span class="checklist-points">+500 XP</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-checkbox" />
+                <span class="checklist-checkmark"></span>
+                <span class="checklist-text">Create REST API with Node.js</span>
+                <span class="checklist-points">+400 XP</span>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="checklist-checkbox" />
+                <span class="checklist-checkmark"></span>
+                <span class="checklist-text">Deploy to Production</span>
+                <span class="checklist-points">+600 XP</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+          <div class="section-title">
+            <h2>Intel Brief</h2>
+          </div>
+          <div class="faq-container">
+            <div class="faq-item">
+              <input type="checkbox" id="faq-1" class="faq-checkbox" />
+              <label for="faq-1" class="faq-question">
+                <h3>
+                  What makes STRIKE different from other training platforms?
+                </h3>
+                <span class="faq-icon">▼</span>
+              </label>
+              <div class="faq-answer">
+                <p>
+                  STRIKE employs a tactical, mission-based approach to learning.
+                  Every course is designed by industry veterans with real-world
+                  combat experience in the tech trenches. We focus on practical
+                  skills, strategic thinking, and deployment-ready knowledge.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <input type="checkbox" id="faq-2" class="faq-checkbox" />
+              <label for="faq-2" class="faq-question">
+                <h3>Do I need prior programming experience?</h3>
+                <span class="faq-icon">▼</span>
+              </label>
+              <div class="faq-answer">
+                <p>
+                  It depends on the mission. Some courses like Web Development
+                  (MERN) are suitable for recruits with basic programming
+                  knowledge. Advanced operations like System Design: HLD require
+                  veteran-level experience. Check each mission's difficulty
+                  rating.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <input type="checkbox" id="faq-3" class="faq-checkbox" />
+              <label for="faq-3" class="faq-question">
+                <h3>How long does it take to complete a course?</h3>
+                <span class="faq-icon">▼</span>
+              </label>
+              <div class="faq-answer">
+                <p>
+                  Mission duration varies: Regular difficulty (8-12 weeks),
+                  Hardened (12-16 weeks), Elite (16-20 weeks). You advance at
+                  your own pace. All operatives have lifetime access to
+                  materials and mission updates.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <input type="checkbox" id="faq-4" class="faq-checkbox" />
+              <label for="faq-4" class="faq-question">
+                <h3>What kind of support is available?</h3>
+                <span class="faq-icon">▼</span>
+              </label>
+              <div class="faq-answer">
+                <p>
+                  24/7 tactical support via our secure communication channels.
+                  You'll have access to instructor Q&A, peer collaboration
+                  forums, weekly live briefings, and code review from our cadre
+                  of senior engineers.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <input type="checkbox" id="faq-5" class="faq-checkbox" />
+              <label for="faq-5" class="faq-question">
+                <h3>Do you offer certifications upon completion?</h3>
+                <span class="faq-icon">▼</span>
+              </label>
+              <div class="faq-answer">
+                <p>
+                  Yes. Upon successful mission completion, you receive a STRIKE
+                  tactical certification recognized by top tech companies.
+                  You'll also get a digital badge, completion certificate, and
+                  portfolio project review.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="container">
+          <div class="section-title">
+            <h2>Field Intel</h2>
+          </div>
+          <p>
+            STRIKE was forged in the fires of digital innovation by a cadre of
+            elite industry veterans. Our mission is to transform aspiring
+            developers into top-tier tech operatives, capable of executing the
+            most demanding software engineering challenges. We don't just teach
+            code; we instill a tactical mindset for problem-solving, system
+            architecture, and strategic execution.
+          </p>
+          <p>
+            <a href="intel.html" class="btn">Meet the Cadre</a>
+          </p>
+        </section>
+
+        <section id="contact" class="container">
+          <div class="section-title">
+            <h2>Establish Comms</h2>
+          </div>
+          <p>
+            Ready to enlist? Contact HQ to begin your assessment.
+            <br />
+            <label for="modal-contact" class="btn">Transmit Signal</label>
+          </p>
+        </section>
+      </main>
+
+      <!-- Animated Background -->
+      <div class="animated-bg">
+        <div class="grid-lines"></div>
+        <div class="tactical-overlay"></div>
+      </div>
+
+      <!-- Cookie Banner -->
+      <input type="checkbox" id="cookie-toggle" class="cookie-toggle" />
+      <div class="cookie-banner">
+        <div class="cookie-content">
+          <p class="cookie-text">
+            We use cookies to enhance your training experience and analyze
+            mission performance. By continuing, you accept our tactical
+            protocols.
+          </p>
+          <div class="cookie-actions">
+            <label for="cookie-toggle" class="cookie-btn">Decline</label>
+            <label for="cookie-toggle" class="cookie-btn cookie-btn-accept"
+              >Accept Mission</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Action Menu -->
+      <div class="fab-container">
+        <input type="checkbox" id="fab-toggle" class="fab-toggle" />
+        <label for="fab-toggle" class="fab-button">
+          <span class="fab-icon">+</span>
+        </label>
+        <div class="fab-menu">
+          <a href="contact.html" class="fab-menu-item">
+            <span class="fab-menu-text">Contact</span>
+          </a>
+          <a href="missions.html" class="fab-menu-item">
+            <span class="fab-menu-text">Missions</span>
+          </a>
+          <a href="pricing.html" class="fab-menu-item">
+            <span class="fab-menu-text">Pricing</span>
+          </a>
+          <a href="intel.html" class="fab-menu-item">
+            <span class="fab-menu-text">Intel</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Social Proof Notifications -->
+      <div class="social-proof-container">
+        <div class="social-proof-notification">
+          <div class="social-proof-header">
+            <div class="social-proof-avatar">SS</div>
+            <span class="social-proof-name">Sharvil Singh</span>
+          </div>
+          <p class="social-proof-message">
+            Just completed the React Advanced course!
+          </p>
+          <span class="social-proof-time">2 minutes ago</span>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <!-- Footer Top Section -->
+          <div class="footer-top">
+            <div class="footer-brand">
+              <h2 class="footer-logo">STRIKE</h2>
+              <p class="footer-tagline">Elite Tactical Training</p>
+              <div class="footer-badge">
+                <span class="badge-label">Presented by</span>
+                <span class="badge-name">CODER ARMY</span>
+              </div>
+            </div>
+
+            <div class="footer-links">
+              <div class="footer-column">
+                <h3 class="footer-heading">Navigation</h3>
+                <ul class="footer-nav">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="missions.html">Missions</a></li>
+                  <li><a href="intel.html">Intel</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-column">
+                <h3 class="footer-heading">Resources</h3>
+                <ul class="footer-nav">
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="features-showcase.html">Features</a></li>
+                  <li><a href="signup.html">Sign Up</a></li>
+                  <li><a href="signin.html">Sign In</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-column">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="footer-social">
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="Twitter"
+                    aria-label="Twitter"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="GitHub"
+                    aria-label="GitHub"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="LinkedIn"
+                    aria-label="LinkedIn"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="social-link"
+                    title="Discord"
+                    aria-label="Discord"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom Section -->
+          <div class="footer-bottom">
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+              <p>
+                &copy; 2024 <span class="highlight">STRIKE</span> TACTICAL
+                TRAINING. ALL RIGHTS RESERVED.
+              </p>
+              <p class="footer-mission">MISSION SUCCESS IS NOT OPTIONAL.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Back to Top Button -->
+      <a href="#hero" class="back-to-top" title="Back to top"></a>
+    </div>
+    <!-- End page-content -->
+
+    <!-- Matrix Code Particles Script -->
+    <script>
+      // Matrix Code Particles Effect
+      const canvas = document.getElementById("matrix-particles");
+      const ctx = canvas.getContext("2d");
+
+      // Set canvas size
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      // Matrix characters - mix of code symbols
+      const chars =
+        "01{}[]()<>/\\|;:,.?!@#$%^&*+-=_~`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      const charArray = chars.split("");
+
+      // Particle settings
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = [];
+
+      // Initialize drops
+      for (let i = 0; i < columns; i++) {
+        drops[i] = Math.random() * -100; // Start at random heights
+      }
+
+      // Colors
+      const colors = ["#00ffc2", "#00d4aa", "#ffd700", "#00ffff"];
+
+      // Draw function
+      function draw() {
+        // Semi-transparent background for trail effect
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          // Random character
+          const char = charArray[Math.floor(Math.random() * charArray.length)];
+
+          // Random color with cyan dominance
+          const colorIndex =
+            Math.random() > 0.7 ? Math.floor(Math.random() * colors.length) : 0;
+          ctx.fillStyle = colors[colorIndex];
+
+          // Draw character
+          const x = i * fontSize;
+          const y = drops[i] * fontSize;
+          ctx.fillText(char, x, y);
+
+          // Reset drop randomly
+          if (y > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+
+          // Increment Y coordinate
+          drops[i]++;
+        }
+      }
+
+      // Animation loop
+      setInterval(draw, 50);
+
+      // Update columns on resize
+      window.addEventListener("resize", () => {
+        const newColumns = canvas.width / fontSize;
+        while (drops.length < newColumns) {
+          drops.push(Math.random() * -100);
+        }
+        while (drops.length > newColumns) {
+          drops.pop();
+        }
+      });
+    </script>
+  </body>
+</html>
