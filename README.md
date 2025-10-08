@@ -9,7 +9,7 @@
 
 **A cutting-edge, military-themed tech education platform built with pure HTML & CSS**
 
-[Live Demo](#) • [Report Bug](https://github.com/neuralnerd01/STRIKE---Elite-Tactical-Training/issues) • [Request Feature](https://github.com/neuralnerd01/STRIKE---Elite-Tactical-Training/issues)
+[Live Demo](#) • [Report Bug](https://neuralnerd01.github.io/strike-coderarmy/) • [Request Feature](https://github.com/neuralnerd01/strike-coderarmy/issues)
 
 </div>
 
@@ -400,12 +400,6 @@ copies or substantial portions of the Software.
 ### ⭐ Star this repository if you found it helpful!
 
 **Made with ❤️ and pure CSS by [neuralnerd01](https://github.com/neuralnerd01)**
-
-[⬆ Back to Top](#-strike---elite-tactical-training-portal)
-
-</div>
-└── README.md       # This file
-```
 
 ## Pages Overview
 
