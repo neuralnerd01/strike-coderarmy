@@ -9,7 +9,7 @@
 
 **A cutting-edge, military-themed tech education platform built with pure HTML & CSS**
 
-[Live Demo](#) • [Report Bug](https://github.com/neuralnerd01/STRIKE---Elite-Tactical-Training/issues) • [Request Feature](https://github.com/neuralnerd01/STRIKE---Elite-Tactical-Training/issues)
+[Live Demo](#) • [Report Bug](https://neuralnerd01-strike-coderarmy-blue.vercel.app/) • [Request Feature](https://github.com/neuralnerd01/strike-coderarmy/issues)
 
 </div>
 
@@ -111,12 +111,12 @@ All you need is a modern web browser! No installations required.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/neuralnerd01/STRIKE---Elite-Tactical-Training.git
+   git clone https://github.com/neuralnerd01/strike-coderarmy
    ```
 
 2. **Navigate to the project directory**
    ```bash
-   cd STRIKE---Elite-Tactical-Training
+   cd strike-coderarmy
    ```
 
 3. **Open in browser**
@@ -400,36 +400,6 @@ copies or substantial portions of the Software.
 ### ⭐ Star this repository if you found it helpful!
 
 **Made with ❤️ and pure CSS by [neuralnerd01](https://github.com/neuralnerd01)**
-
-[⬆ Back to Top](#-strike---elite-tactical-training-portal)
-
-</div>
-└── README.md       # This file
-```
-
-## Pages Overview
-
-- **index.html**: Landing page with hero section and course overview
-- **missions.html**: Detailed course descriptions with objectives and prerequisites
-- **intel.html**: Command philosophy and team member profiles
-- **contact.html**: Contact form and information
-
-## Customization
-
-All styles are embedded within each HTML file's `<style>` tag. To customize:
-
-1. Edit the CSS custom properties in the `:root` selector
-2. Modify colors, fonts, and animations as needed
-3. All styles are self-contained - no external CSS files required
-
-## Browser Support
-
-Works in all modern browsers that support:
-
-- CSS Grid
-- CSS Custom Properties (variables)
-- CSS Animations
-- Flexbox
 
 ---
 
