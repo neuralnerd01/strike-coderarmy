@@ -135,7 +135,7 @@
   z-index: 1;
 }
 
-/* --- Matrix Code Particles --- */
+/* --- Matrix Code Particles (Pure CSS) --- */
 .matrix-particles {
   position: absolute;
   top: 0;
@@ -145,7 +145,76 @@
   z-index: 2;
   opacity: 0.3;
   pointer-events: none;
-  mix-blend-mode: screen;
+  overflow: hidden;
+}
+
+.matrix-column {
+  position: absolute;
+  top: -100%;
+  width: 20px;
+  height: 100vh;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #00ffc2;
+  text-shadow: 0 0 5px #00ffc2;
+  animation: matrixFall 8s linear infinite;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.matrix-column::before {
+  content: '0\A1\A0\A0\A1\A0\A1\A0\A0\A1\A1\A0\A1\A0\A0\A1\A0\A1\A1\A0\A0\A1\A0\A1\A0\A1\A1\A0\A0\A1';
+  white-space: pre;
+  display: block;
+}
+
+.matrix-column:nth-child(2n)::before {
+  content: '1\A0\A1\A0\A1\A0\A0\A1\A1\A0\A0\A1\A0\A1\A1\A0\A1\A0\A0\A1\A0\A1\A0\A1\A1\A0\A0\A1\A0\A1';
+  color: #00d4aa;
+}
+
+.matrix-column:nth-child(3n)::before {
+  content: '0\A1\A1\A0\A0\A1\A0\A1\A0\A0\A1\A1\A0\A1\A0\A0\A1\A0\A1\A1\A0\A0\A1\A0\A1\A0\A1\A1\A0\A0';
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+.matrix-column:nth-child(4n)::before {
+  content: '1\A1\A0\A1\A0\A0\A1\A1\A0\A1\A0\A1\A0\A0\A1\A0\A1\A1\A0\A0\A1\A0\A1\A0\A1\A1\A0\A0\A1\A0';
+  color: #00ffff;
+}
+
+.matrix-column:nth-child(5n) {
+  animation-duration: 10s;
+}
+
+.matrix-column:nth-child(7n) {
+  animation-duration: 6s;
+}
+
+.matrix-column:nth-child(11n) {
+  animation-duration: 12s;
+}
+
+.matrix-column:nth-child(13n) {
+  animation-duration: 7s;
+}
+
+@keyframes matrixFall {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 /* --- Tactical Grid Overlay --- */

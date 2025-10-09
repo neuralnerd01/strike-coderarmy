@@ -381,12 +381,88 @@
             <div class="hero-bg-slide"></div>
           </div>
 
-          <!-- Matrix Code Particles Canvas -->
-          <canvas id="matrix-particles" class="matrix-particles"></canvas>
+          <!-- Matrix Code Particles (Pure CSS) -->
+          <div class="matrix-particles">
+            <div
+              class="matrix-column"
+              style="left: 5%; animation-delay: 0s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 10%; animation-delay: 0.3s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 15%; animation-delay: 0.6s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 20%; animation-delay: 0.9s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 25%; animation-delay: 1.2s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 30%; animation-delay: 1.5s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 35%; animation-delay: 0.2s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 40%; animation-delay: 0.5s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 45%; animation-delay: 0.8s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 50%; animation-delay: 1.1s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 55%; animation-delay: 1.4s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 60%; animation-delay: 0.1s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 65%; animation-delay: 0.4s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 70%; animation-delay: 0.7s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 75%; animation-delay: 1s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 80%; animation-delay: 1.3s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 85%; animation-delay: 0.15s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 90%; animation-delay: 0.45s"
+            ></div>
+            <div
+              class="matrix-column"
+              style="left: 95%; animation-delay: 0.75s"
+            ></div>
+          </div>
 
           <!-- Tactical Grid Overlay -->
           <div class="tactical-grid-overlay"></div>
-
           <div class="hero-content">
             <div class="hero-title-wrapper">
               <h1 class="hero-title-animated">STRIKE</h1>
@@ -475,10 +551,7 @@
                   <label for="stat-modal-1" class="stat-modal-btn-close"
                     >CLOSE</label
                   >
-                  <label
-                    for="modal-enrollment"
-                    class="stat-modal-btn-enroll"
-                    onclick="document.getElementById('stat-modal-1').checked = false;"
+                  <label for="modal-enrollment" class="stat-modal-btn-enroll"
                     >ENLIST NOW</label
                   >
                 </div>
@@ -552,10 +625,7 @@
                   <label for="stat-modal-3" class="stat-modal-btn-close"
                     >CLOSE</label
                   >
-                  <label
-                    for="modal-enrollment"
-                    class="stat-modal-btn-enroll"
-                    onclick="document.getElementById('stat-modal-3').checked = false;"
+                  <label for="modal-enrollment" class="stat-modal-btn-enroll"
                     >START NOW</label
                   >
                 </div>
@@ -592,10 +662,7 @@
                   <label for="stat-modal-4" class="stat-modal-btn-close"
                     >CLOSE</label
                   >
-                  <label
-                    for="modal-contact"
-                    class="stat-modal-btn-enroll"
-                    onclick="document.getElementById('stat-modal-4').checked = false;"
+                  <label for="modal-contact" class="stat-modal-btn-enroll"
                     >CONTACT US</label
                   >
                 </div>
@@ -1766,10 +1833,12 @@
                 <h3 class="footer-heading">Connect</h3>
                 <div class="footer-social">
                   <a
-                    href="#"
+                    href="https://x.com/neuralnerd01"
                     class="social-link"
                     title="Twitter"
                     aria-label="Twitter"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <svg
                       width="20"
@@ -1783,10 +1852,12 @@
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/neuralnerd01/strike-coderarmy"
                     class="social-link"
                     title="GitHub"
                     aria-label="GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <svg
                       width="20"
@@ -1800,10 +1871,12 @@
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/neuralnerd01/"
                     class="social-link"
                     title="LinkedIn"
                     aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <svg
                       width="20"
@@ -1856,84 +1929,5 @@
       <a href="#hero" class="back-to-top" title="Back to top"></a>
     </div>
     <!-- End page-content -->
-
-    <!-- Matrix Code Particles Script -->
-    <script>
-      // Matrix Code Particles Effect
-      const canvas = document.getElementById("matrix-particles");
-      const ctx = canvas.getContext("2d");
-
-      // Set canvas size
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      resizeCanvas();
-      window.addEventListener("resize", resizeCanvas);
-
-      // Matrix characters - mix of code symbols
-      const chars =
-        "01{}[]()<>/\\|;:,.?!@#$%^&*+-=_~`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-      const charArray = chars.split("");
-
-      // Particle settings
-      const fontSize = 14;
-      const columns = canvas.width / fontSize;
-      const drops = [];
-
-      // Initialize drops
-      for (let i = 0; i < columns; i++) {
-        drops[i] = Math.random() * -100; // Start at random heights
-      }
-
-      // Colors
-      const colors = ["#00ffc2", "#00d4aa", "#ffd700", "#00ffff"];
-
-      // Draw function
-      function draw() {
-        // Semi-transparent background for trail effect
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.font = fontSize + "px monospace";
-
-        for (let i = 0; i < drops.length; i++) {
-          // Random character
-          const char = charArray[Math.floor(Math.random() * charArray.length)];
-
-          // Random color with cyan dominance
-          const colorIndex =
-            Math.random() > 0.7 ? Math.floor(Math.random() * colors.length) : 0;
-          ctx.fillStyle = colors[colorIndex];
-
-          // Draw character
-          const x = i * fontSize;
-          const y = drops[i] * fontSize;
-          ctx.fillText(char, x, y);
-
-          // Reset drop randomly
-          if (y > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-          }
-
-          // Increment Y coordinate
-          drops[i]++;
-        }
-      }
-
-      // Animation loop
-      setInterval(draw, 50);
-
-      // Update columns on resize
-      window.addEventListener("resize", () => {
-        const newColumns = canvas.width / fontSize;
-        while (drops.length < newColumns) {
-          drops.push(Math.random() * -100);
-        }
-        while (drops.length > newColumns) {
-          drops.pop();
-        }
-      });
-    </script>
   </body>
 </html>
