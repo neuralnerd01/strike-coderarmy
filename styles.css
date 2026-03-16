@@ -278,13 +278,15 @@ body.contact-page .nav-links a[href="contact.html"]::after {
 }
 
 body.signin-page .nav-links a[href="signin.html"],
-body.signup-page .nav-links a[href="signup.html"] {
+body.signup-page .nav-links a[href="signup.html"],
+body.profile-page .nav-links a[href="profile.html"] {
   color: var(--color-primary);
   text-shadow: 0 0 5px var(--color-primary);
 }
 
 body.signin-page .nav-links a[href="signin.html"]::after,
-body.signup-page .nav-links a[href="signup.html"]::after {
+body.signup-page .nav-links a[href="signup.html"]::after,
+body.profile-page .nav-links a[href="profile.html"]::after {
   transform: scaleX(1);
   background: var(--color-primary);
 }
@@ -320,6 +322,25 @@ body.signup-page .nav-links a[href="signup.html"]::after {
   background: var(--color-primary);
   border-color: var(--color-primary);
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Profile Navigation Button */
+.nav-btn-profile {
+  padding: 0.5rem 1.25rem !important;
+  border: 2px solid var(--color-primary);
+  border-radius: 0;
+  color: var(--color-primary);
+  transition: all var(--transition-fast);
+}
+
+.nav-btn-profile::after {
+  display: none !important;
+}
+
+.nav-btn-profile:hover {
+  background: var(--color-primary);
+  color: var(--color-bg) !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
 /* Mobile Nav Toggle - Checkbox Hack */
